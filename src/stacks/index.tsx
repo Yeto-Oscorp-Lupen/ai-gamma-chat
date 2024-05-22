@@ -15,7 +15,7 @@ import IntroPage from '../pages/Intro';
 import WelcomePage from '../pages/Welcome';
 import CustomTabBar from '../components/CustomTabBar';
 import ChatPage from '../pages/Chat';
-import TaskPage from '../pages/Task';
+import TaskPage from '../pages/Tasks';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
