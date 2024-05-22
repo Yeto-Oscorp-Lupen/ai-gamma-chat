@@ -1,15 +1,24 @@
+/* eslint-disable react/no-unstable-nested-components */
 import {useCallback} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {useFocusEffect} from '@react-navigation/native';
 import {StatusBar} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {StackNavigatorScreenOptions, IntroPageStackOptions} from './options';
-// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {
+  StackNavigatorScreenOptions,
+  IntroPageStackOptions,
+  RootTabsScreenOptions,
+  RootTabsStackOptions,
+} from './options';
 import IntroPage from '../pages/Intro';
 import WelcomePage from '../pages/Welcome';
+import CustomTabBar from '../components/CustomTabBar';
+import ChatPage from '../pages/Chat';
+import TasksPage from '../pages/Tasks';
 
 const Stack = createNativeStackNavigator();
-// const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const StackWrapper = () => {
   // const [isFirstLaunch, setIsFirstLaunch] = useState<any>(undefined);
@@ -34,16 +43,16 @@ const StackWrapper = () => {
     }, []),
   );
 
-  // const RootTabs = () => {
-  //   return (
-  //     <Tab.Navigator
-  //       screenOptions={RootTabsScreenOptions}
-  //       tabBar={(props: any) => <CustomTabBar {...props} />}>
-  //       <Tab.Screen name="ImagePage" component={ImagePage} />
-  //       <Tab.Screen name="VideoPage" component={VideoPage} />
-  //     </Tab.Navigator>
-  //   );
-  // };
+  const RootTabs = () => {
+    return (
+      <Tab.Navigator
+        screenOptions={RootTabsScreenOptions}
+        tabBar={(props: any) => <CustomTabBar {...props} />}>
+        <Tab.Screen name="ChatPage" component={ChatPage} />
+        <Tab.Screen name="TasksPage" component={TasksPage} />
+      </Tab.Navigator>
+    );
+  };
 
   // if (!isFirstLaunch) {
   //   return null;
@@ -52,8 +61,7 @@ const StackWrapper = () => {
   return (
     <Stack.Navigator
       screenOptions={StackNavigatorScreenOptions as any}
-      // initialRouteName={isFirstLaunch === 'true' ? 'IntroPage' : 'RootTabs'}>
-      initialRouteName={'WelcomePage'}>
+      initialRouteName={'RootTabs'}>
       <Stack.Screen
         options={IntroPageStackOptions}
         name="WelcomePage"
@@ -64,11 +72,11 @@ const StackWrapper = () => {
         name="IntroPage"
         component={IntroPage}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         options={RootTabsStackOptions}
         name="RootTabs"
         component={RootTabs}
-      /> */}
+      />
     </Stack.Navigator>
   );
 };
