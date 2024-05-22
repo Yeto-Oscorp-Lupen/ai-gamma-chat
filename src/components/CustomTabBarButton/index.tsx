@@ -29,13 +29,13 @@ const CustomTabBarButton = ({
         <Chat
           color={isFocused ? theme.colors.main.white : theme.colors.grey[300]}
           width={30}
-          heigth={30}
+          height={30}
         />
       ) : (
         <Task
           color={isFocused ? theme.colors.main.white : theme.colors.grey[300]}
           width={30}
-          heigth={30}
+          height={30}
         />
       )}
       <Text

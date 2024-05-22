@@ -1,5 +1,5 @@
 import {View} from 'react-native';
-import TabBarButton from '../CustomTabBarButton';
+import CustomTabBarButton from '../CustomTabBarButton';
 import styles from './styles';
 
 const CustomTabBar = ({state, descriptors, navigation}: any) => (
@@ -28,7 +28,7 @@ const CustomTabBar = ({state, descriptors, navigation}: any) => (
       };
 
       return (
-        <TabBarButton
+        <CustomTabBarButton
           key={index}
           route={route}
           isFocused={isFocused}
