@@ -8,6 +8,7 @@ export const theme = {
       black: '#000000',
       white: '#FFFFFF',
       gray: '#B4B4B4',
+      grey: '#333438',
     },
     background: {
       base: '#16171B',
@@ -36,7 +37,7 @@ export const theme = {
       100: '#D1D4DA',
       200: '#BCBCBC',
       300: '#AAAAAA',
-      500: '#B5B5B5',
+      500: '#B4B4B4',
       base: '#697488',
       600: '#8F8F8F',
       700: '#737373',
