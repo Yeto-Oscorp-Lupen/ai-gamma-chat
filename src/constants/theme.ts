@@ -3,7 +3,7 @@ const spacing = (factor: number) => factor * 8;
 export const theme = {
   colors: {
     main: {
-      primary: '#16171B',
+      primary: '#EE8908',
       secondary: '#282B33',
       black: '#000000',
       white: '#FFFFFF',
@@ -94,16 +94,11 @@ export const theme = {
     ],
   },
   font: {
-    extraBold: 'LeagueSpartan-Semibold',
-    semiBold: 'LeagueSpartan-Semibold',
-    bold: 'LeagueSpartan-Bold',
-    black: 'LeagueSpartan-Black',
-    heavy: 'LeagueSpartan-Heavy',
-    light: 'LeagueSpartan-Light',
-    ultraLight: 'LeagueSpartan-UltraLight',
-    medium: 'LeagueSpartan-Medium',
-    regular: 'LeagueSpartan-Regular',
-    thin: 'LeagueSpartan-Thin',
+    semiBold: 'SourceSansPro-Semibold',
+    bold: 'SourceSansPro-Bold',
+    black: 'SourceSansPro-Black',
+    light: 'SourceSansPro-Light',
+    regular: 'SourceSansPro-Regular',
   },
   spacing,
 };

@@ -1,9 +1,7 @@
-import {CameraRoll} from '@react-native-camera-roll/camera-roll';
 import {Animated, Easing} from 'react-native';
 import {ALERT_TYPE, Dialog, Toast} from 'react-native-alert-notification';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import {getAvailablePurchases, initConnection} from 'react-native-iap';
-import RNFetchBlob from 'rn-fetch-blob';
 import {COMMON_ANIMATION_DURATION} from '../constants';
 
 export const getPurchases = async (isInStartPage = false) => {
@@ -34,31 +32,6 @@ export const vibrate = () => {
   };
 
   ReactNativeHapticFeedback.trigger('impactLight', options);
-};
-
-export const downloadMediaFromUrls = async (urls: string[]) => {
-  const downloads = urls.map(url => downloadImage(url));
-  const results = await Promise.all(downloads);
-  return results;
-};
-
-export const downloadImage = async (url: string) => {
-  const ext = 'png';
-  const path = `${RNFetchBlob.fs.dirs.DownloadDir}/${Date.now()}.${ext}`;
-
-  return RNFetchBlob.config({
-    fileCache: true,
-    appendExt: ext,
-    addAndroidDownloads: {
-      useDownloadManager: true,
-      notification: true,
-      path: path,
-    },
-  })
-    .fetch('GET', url)
-    .then(res => CameraRoll.save(res.data, {type: 'photo'}))
-    .then(() => successfulAlert('Media downloaded successfully.'))
-    .catch(() => warningAlert('Media download failed.'));
 };
 
 export const animateHide = (animatedValue: any, value?: number) => {
@@ -140,27 +113,4 @@ export const warningAlert = (message: string) => {
     textBody: message,
     autoClose: 1000,
   });
-};
-
-export const downloadVideo = async (videoUrl: string) => {
-  await RNFetchBlob.config({
-    fileCache: true,
-    appendExt: 'mp4',
-    addAndroidDownloads: {
-      useDownloadManager: true,
-      notification: true,
-      path: `${RNFetchBlob.fs.dirs.DownloadDir}/${Date.now()}.mp4`,
-    },
-  })
-    .fetch('GET', videoUrl, {})
-    .then(res => {
-      CameraRoll.save(res.data, {type: 'video'})
-        .then(() => successfulAlert('Media Downloaded Successfully.'))
-        .catch(() => {
-          warningAlert('Media Download Failed.');
-        });
-    })
-    .catch(error => {
-      console.error(error);
-    });
 };

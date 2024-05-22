@@ -15,6 +15,13 @@
 		3BEAAF1E5564FA66543E8C69 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F19998C8458F76AC03212D3D /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-aiGammaChat-aiGammaChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-aiGammaChat-aiGammaChatTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		3B23A28C76F549E6A9397C5D /* SourceSansPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 966E342CB6F3428B9035CB85 /* SourceSansPro-Black.otf */; };
+		5AF3B276620040CFA386B761 /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA299A3FAA994503B1615886 /* SourceSansPro-Bold.otf */; };
+		9107BD4E77DA496284510D0E /* SourceSansPro-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAE080F1FC2147D0ADB6E369 /* SourceSansPro-ExtraLight.otf */; };
+		DFDBA4ED169F43079360AA67 /* SourceSansPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0377D4931D44E3BF53A594 /* SourceSansPro-It.otf */; };
+		C2F2C84FB5914D4E8A8A3017 /* SourceSansPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B06112D98CE84548B3003B9E /* SourceSansPro-Light.otf */; };
+		76292A34044D4513AE98AE33 /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9A9792B9E1E4A3196542AE0 /* SourceSansPro-Regular.otf */; };
+		6761A3E9BA70429B90D0F5B2 /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 404EC7CB7AE54E9EAD3C63D3 /* SourceSansPro-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-aiGammaChat-aiGammaChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiGammaChat-aiGammaChatTests.release.xcconfig"; path = "Target Support Files/Pods-aiGammaChat-aiGammaChatTests/Pods-aiGammaChat-aiGammaChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F19998C8458F76AC03212D3D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = aiGammaChat/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		966E342CB6F3428B9035CB85 /* SourceSansPro-Black.otf */ = {isa = PBXFileReference; name = "SourceSansPro-Black.otf"; path = "../src/assets/fonts/SourceSansPro-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA299A3FAA994503B1615886 /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; name = "SourceSansPro-Bold.otf"; path = "../src/assets/fonts/SourceSansPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CAE080F1FC2147D0ADB6E369 /* SourceSansPro-ExtraLight.otf */ = {isa = PBXFileReference; name = "SourceSansPro-ExtraLight.otf"; path = "../src/assets/fonts/SourceSansPro-ExtraLight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3A0377D4931D44E3BF53A594 /* SourceSansPro-It.otf */ = {isa = PBXFileReference; name = "SourceSansPro-It.otf"; path = "../src/assets/fonts/SourceSansPro-It.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B06112D98CE84548B3003B9E /* SourceSansPro-Light.otf */ = {isa = PBXFileReference; name = "SourceSansPro-Light.otf"; path = "../src/assets/fonts/SourceSansPro-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C9A9792B9E1E4A3196542AE0 /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; name = "SourceSansPro-Regular.otf"; path = "../src/assets/fonts/SourceSansPro-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		404EC7CB7AE54E9EAD3C63D3 /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; name = "SourceSansPro-Semibold.otf"; path = "../src/assets/fonts/SourceSansPro-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +141,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				718E63FD323845E9B0DEE68E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -152,6 +167,21 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		718E63FD323845E9B0DEE68E /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				966E342CB6F3428B9035CB85 /* SourceSansPro-Black.otf */,
+				DA299A3FAA994503B1615886 /* SourceSansPro-Bold.otf */,
+				CAE080F1FC2147D0ADB6E369 /* SourceSansPro-ExtraLight.otf */,
+				3A0377D4931D44E3BF53A594 /* SourceSansPro-It.otf */,
+				B06112D98CE84548B3003B9E /* SourceSansPro-Light.otf */,
+				C9A9792B9E1E4A3196542AE0 /* SourceSansPro-Regular.otf */,
+				404EC7CB7AE54E9EAD3C63D3 /* SourceSansPro-Semibold.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -249,6 +279,13 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3BEAAF1E5564FA66543E8C69 /* PrivacyInfo.xcprivacy in Resources */,
+				3B23A28C76F549E6A9397C5D /* SourceSansPro-Black.otf in Resources */,
+				5AF3B276620040CFA386B761 /* SourceSansPro-Bold.otf in Resources */,
+				9107BD4E77DA496284510D0E /* SourceSansPro-ExtraLight.otf in Resources */,
+				DFDBA4ED169F43079360AA67 /* SourceSansPro-It.otf in Resources */,
+				C2F2C84FB5914D4E8A8A3017 /* SourceSansPro-Light.otf in Resources */,
+				76292A34044D4513AE98AE33 /* SourceSansPro-Regular.otf in Resources */,
+				6761A3E9BA70429B90D0F5B2 /* SourceSansPro-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
