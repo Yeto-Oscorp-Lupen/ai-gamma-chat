@@ -7,6 +7,7 @@ import AnimatedView from '../../components/AnimatedView';
 import {useCallback, useRef} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
 import {animateHide, animateVisible} from '../../utils';
+import StickyImageMessage from '../../components/StickyImageMessage';
 
 const TasksPage = () => {
   const actionAnimatedValue = useRef(new Animated.Value(0)).current;
@@ -38,6 +39,7 @@ const TasksPage = () => {
           )}
         />
       </AnimatedView>
+      <StickyImageMessage />
     </View>
   );
 };
