@@ -1,6 +1,6 @@
 import {View} from 'react-native';
 import TabBarButton from '../CustomTabBarButton';
-import styles from './style';
+import styles from './styles';
 
 const CustomTabBar = ({state, descriptors, navigation}: any) => (
   <View style={styles.mainDiv}>

@@ -1,7 +1,7 @@
 import {Text, TouchableHighlight, View} from 'react-native';
 import {theme} from '../../constants/theme';
 import {Chat, Task} from '../Icons';
-import styles from './style';
+import styles from './styles';
 
 const CustomTabBarButton = ({
   route,
