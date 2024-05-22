@@ -15,7 +15,7 @@ import IntroPage from '../pages/Intro';
 import WelcomePage from '../pages/Welcome';
 import CustomTabBar from '../components/CustomTabBar';
 import ChatPage from '../pages/Chat';
-import TasksPage from '../pages/Tasks';
+import TaskPage from '../pages/Task';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,7 +49,7 @@ const StackWrapper = () => {
         screenOptions={RootTabsScreenOptions}
         tabBar={(props: any) => <CustomTabBar {...props} />}>
         <Tab.Screen name="ChatPage" component={ChatPage} />
-        <Tab.Screen name="TasksPage" component={TasksPage} />
+        <Tab.Screen name="TaskPage" component={TaskPage} />
       </Tab.Navigator>
     );
   };

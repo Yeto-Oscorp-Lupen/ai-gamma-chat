@@ -7,10 +7,11 @@ export const theme = {
       secondary: '#282B33',
       black: '#000000',
       white: '#FFFFFF',
+      gray: '#B4B4B4',
     },
     background: {
       base: '#16171B',
-      secondary: '#171717',
+      secondary: '#333438',
       overlay: 'rgba(46, 38, 68, 0.85)',
     },
     text: {
