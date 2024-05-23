@@ -12,6 +12,7 @@ export const theme = {
     },
     background: {
       base: '#16171B',
+      purchase: '#232126',
       secondary: '#333438',
       overlay: 'rgba(46, 38, 68, 0.85)',
     },

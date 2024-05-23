@@ -10,12 +10,14 @@ import {
   IntroPageStackOptions,
   RootTabsScreenOptions,
   RootTabsStackOptions,
+  PurchasePagesOptions,
 } from './options';
 import IntroPage from '../pages/Intro';
 import WelcomePage from '../pages/Welcome';
 import CustomTabBar from '../components/CustomTabBar';
 import ChatPage from '../pages/Chat';
 import TaskPage from '../pages/Tasks';
+import PurchasePage from '../pages/Purchase';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -71,6 +73,11 @@ const StackWrapper = () => {
         options={IntroPageStackOptions}
         name="IntroPage"
         component={IntroPage}
+      />
+      <Stack.Screen
+        options={PurchasePagesOptions}
+        name="PurchasePage"
+        component={PurchasePage}
       />
       <Stack.Screen
         options={RootTabsStackOptions}
