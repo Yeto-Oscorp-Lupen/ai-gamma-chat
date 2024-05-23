@@ -8,6 +8,9 @@ export default StyleSheet.create({
   },
   columnWrapper: {
     gap: 5,
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(0.3),
+  },
+  seperator: {
+    height: theme.spacing(6),
   },
 });

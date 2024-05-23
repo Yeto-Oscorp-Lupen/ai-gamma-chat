@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
 import {Animated, FlatList, View} from 'react-native';
 import styles from './styles';
@@ -14,8 +15,8 @@ const TasksPage = () => {
 
   useFocusEffect(
     useCallback(() => {
-      animateVisible(actionAnimatedValue); // Make component visible when focused
-      return () => animateHide(actionAnimatedValue); // Optionally make component hidden when not focused
+      animateVisible(actionAnimatedValue);
+      return () => animateHide(actionAnimatedValue);
     }, []),
   );
 
@@ -30,6 +31,7 @@ const TasksPage = () => {
           numColumns={2}
           columnWrapperStyle={styles.columnWrapper}
           showsHorizontalScrollIndicator={false}
+          ListFooterComponent={() => <View style={styles.seperator} />}
           renderItem={({item: task}) => (
             <TaskItem
               imageUrl={task.imageUrl}
