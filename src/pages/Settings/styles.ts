@@ -5,7 +5,7 @@ import {theme} from '../../constants/theme';
 export default StyleSheet.create({
   container: {
     justifyContent: 'center',
-    backgroundColor: theme.colors.background.base,
+    backgroundColor: theme.colors.main.black,
     height: '100%',
   },
   title: {
