@@ -3,7 +3,7 @@ import {COMMON_ANIMATION_DURATION} from '../constants';
 import {theme} from '../constants/theme';
 import type {NativeStackNavigationOptions as NativeStackNavigationOptionsType} from '@react-navigation/native-stack';
 import styles from './style';
-import {ArrowLeft, BackFill} from '../components/Icons';
+import {ArrowLeft, BackFill, SettingsFill} from '../components/Icons';
 import {vibrate} from '../utils';
 import {NavigationType} from '../types';
 
@@ -16,9 +16,10 @@ const onPressBackButton = (navigation: NavigationType) => {
   navigation.goBack();
 };
 
-// const onPressSettingsButton = (navigation: any) => {
-//   navigation.navigate('Settings');
-// };
+const onPressSettingsButton = (navigation: any) => {
+  vibrate();
+  navigation.navigate('Settings');
+};
 
 // const onPressBackButton = (navigation: any) => {
 //   navigation.goBack();
@@ -29,15 +30,37 @@ export const RootTabsStackOptions = () => ({
   headerShown: false,
 });
 
-export const RootTabsScreenOptions = (): any => ({
-  headerShown: false,
+export const RootTabsScreenOptions = ({
+  navigation,
+}: OptionsPropsType & NativeStackNavigationOptionsType) => ({
+  headerShown: true,
   animation: 'shift',
+  title: 'Gamma AI',
+  headerShadowVisible: false,
+  headerTitleStyle: {
+    color: theme.colors.main.white, // Change the color
+    fontFamily: theme.font.bold, // Change the font family,
+    fontSize: 16,
+  },
+  headerStyle: {
+    backgroundColor: theme.colors.main.grey,
+    borderBottomColor: theme.colors.main.grey,
+  },
   transitionSpec: {
     animation: 'timing',
     config: {
       duration: COMMON_ANIMATION_DURATION,
     },
   },
+  headerLeft: () => (
+    <Pressable
+      style={styles.backButton}
+      onPress={() => {
+        onPressSettingsButton(navigation);
+      }}>
+      <SettingsFill style={styles.backButtonIcon} width={20} height={20} />
+    </Pressable>
+  ),
   sceneStyleInterpolator: ({current}: any) => ({
     sceneStyle: {
       opacity: current.progress.interpolate({
