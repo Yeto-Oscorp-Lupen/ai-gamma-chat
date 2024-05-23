@@ -11,6 +11,7 @@ import {
   RootTabsScreenOptions,
   RootTabsStackOptions,
   PurchasePagesOptions,
+  SettingsPageOptions,
 } from './options';
 import IntroPage from '../pages/Intro';
 import WelcomePage from '../pages/Welcome';
@@ -18,6 +19,7 @@ import CustomTabBar from '../components/CustomTabBar';
 import ChatPage from '../pages/Chat';
 import TaskPage from '../pages/Tasks';
 import PurchasePage from '../pages/Purchase';
+import SettingsPage from '../pages/Settings';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -84,6 +86,13 @@ const StackWrapper = () => {
         name="RootTabs"
         component={RootTabs}
       />
+      <Stack.Group screenOptions={{presentation: 'card'}}>
+        <Stack.Screen
+          name="SettingsPage"
+          component={SettingsPage}
+          options={SettingsPageOptions as any}
+        />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };

@@ -19,6 +19,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  backView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   backButtonIcon: {
     color: theme.colors.main.white,
   },

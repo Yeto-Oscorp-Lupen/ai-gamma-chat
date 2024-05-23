@@ -3,12 +3,7 @@ import {COMMON_ANIMATION_DURATION} from '../constants';
 import {theme} from '../constants/theme';
 import type {NativeStackNavigationOptions as NativeStackNavigationOptionsType} from '@react-navigation/native-stack';
 import styles from './style';
-import {
-  ArrowLeft,
-  BackFill,
-  CrossFill,
-  SettingsFill,
-} from '../components/Icons';
+import {ArrowLeft, CrossFill, SettingsFill} from '../components/Icons';
 import {vibrate} from '../utils';
 import {NavigationType} from '../types';
 
@@ -23,7 +18,7 @@ const onPressBackButton = (navigation: NavigationType) => {
 
 const onPressSettingsButton = (navigation: any) => {
   vibrate();
-  navigation.navigate('Settings');
+  navigation.navigate('SettingsPage');
 };
 
 // const onPressBackButton = (navigation: any) => {
@@ -130,20 +125,20 @@ export const SettingsPageOptions = ({
 }: OptionsPropsType & NativeStackNavigationOptionsType) => ({
   headerShown: true,
   title: 'Settings',
-  headerStyle: {
-    backgroundColor: theme.colors.main.black,
-    borderBottomColor: theme.colors.main.black,
-  },
   headerTitleStyle: {
-    color: theme.colors.main.white, // Change the color
-    fontFamily: 'SFProRounded-Regular', // Change the font family,
-    fontSize: 22,
+    color: theme.colors.main.white,
+    fontFamily: theme.font.bold,
+    fontSize: 16,
+  },
+  headerStyle: {
+    backgroundColor: theme.colors.main.grey,
+    borderBottomColor: theme.colors.main.grey,
   },
   headerLeft: () => (
     <Pressable
-      style={styles.backButton}
+      style={styles.backView}
       onPress={() => onPressBackButton(navigation)}>
-      <BackFill width={15} height={15} color={theme.colors.main.white} />
+      <CrossFill style={styles.backButtonIcon} width={16} height={16} />
     </Pressable>
   ),
 });
