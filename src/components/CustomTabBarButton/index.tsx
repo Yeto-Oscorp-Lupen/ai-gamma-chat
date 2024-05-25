@@ -27,14 +27,14 @@ const CustomTabBarButton = ({
       {route.name === 'ChatPage' ? (
         <Chat
           color={isFocused ? theme.colors.main.white : theme.colors.grey[300]}
-          width={25}
-          height={25}
+          width={28}
+          height={28}
         />
       ) : (
         <Task
           color={isFocused ? theme.colors.main.white : theme.colors.grey[300]}
-          width={25}
-          height={25}
+          width={28}
+          height={28}
         />
       )}
       <Text
