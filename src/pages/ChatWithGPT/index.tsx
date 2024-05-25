@@ -4,18 +4,18 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  View,
   Text,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {askToChatGpt} from '../../api/chatGPT';
+import PromptInput from '../../components/PromptInput';
 import {setFreeRight} from '../../store/features/appSlice';
+import {vibrate} from '../../utils';
 import AnimatedTyping from '../../utils/AnimatedTyping';
 import styles from './styles';
-import PromptInput from '../../components/PromptInput';
-import { vibrate } from '../../utils';
 
 const ChatWithGPTPage = ({route, navigation}: any) => {
   const dispatch = useDispatch();
