@@ -22,6 +22,8 @@
 		9107BD4E77DA496284510D0E /* SourceSansPro-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAE080F1FC2147D0ADB6E369 /* SourceSansPro-ExtraLight.otf */; };
 		C2F2C84FB5914D4E8A8A3017 /* SourceSansPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B06112D98CE84548B3003B9E /* SourceSansPro-Light.otf */; };
 		DFDBA4ED169F43079360AA67 /* SourceSansPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0377D4931D44E3BF53A594 /* SourceSansPro-It.otf */; };
+		E81A9E102C024B9C003C4B75 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A9E0F2C024B9C003C4B75 /* StoreKit.framework */; };
+		E81A9E122C024CA5003C4B75 /* StoreConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E81A9E112C024CA5003C4B75 /* StoreConfiguration.storekit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,21 +48,23 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = aiGammaChat/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = aiGammaChat/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-aiGammaChat-aiGammaChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-aiGammaChat-aiGammaChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A0377D4931D44E3BF53A594 /* SourceSansPro-It.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-It.otf"; path = "../src/assets/fonts/SourceSansPro-It.otf"; sourceTree = "<group>"; };
+		3A0377D4931D44E3BF53A594 /* SourceSansPro-It.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-It.otf"; path = "../src/assets/fonts/SourceSansPro-It.otf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-aiGammaChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiGammaChat.debug.xcconfig"; path = "Target Support Files/Pods-aiGammaChat/Pods-aiGammaChat.debug.xcconfig"; sourceTree = "<group>"; };
-		404EC7CB7AE54E9EAD3C63D3 /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Semibold.otf"; path = "../src/assets/fonts/SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
+		404EC7CB7AE54E9EAD3C63D3 /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Semibold.otf"; path = "../src/assets/fonts/SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-aiGammaChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiGammaChat.release.xcconfig"; path = "Target Support Files/Pods-aiGammaChat/Pods-aiGammaChat.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-aiGammaChat-aiGammaChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiGammaChat-aiGammaChatTests.debug.xcconfig"; path = "Target Support Files/Pods-aiGammaChat-aiGammaChatTests/Pods-aiGammaChat-aiGammaChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-aiGammaChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-aiGammaChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = aiGammaChat/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-aiGammaChat-aiGammaChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiGammaChat-aiGammaChatTests.release.xcconfig"; path = "Target Support Files/Pods-aiGammaChat-aiGammaChatTests/Pods-aiGammaChat-aiGammaChatTests.release.xcconfig"; sourceTree = "<group>"; };
-		966E342CB6F3428B9035CB85 /* SourceSansPro-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Black.otf"; path = "../src/assets/fonts/SourceSansPro-Black.otf"; sourceTree = "<group>"; };
-		B06112D98CE84548B3003B9E /* SourceSansPro-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Light.otf"; path = "../src/assets/fonts/SourceSansPro-Light.otf"; sourceTree = "<group>"; };
-		C9A9792B9E1E4A3196542AE0 /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Regular.otf"; path = "../src/assets/fonts/SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
-		CAE080F1FC2147D0ADB6E369 /* SourceSansPro-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-ExtraLight.otf"; path = "../src/assets/fonts/SourceSansPro-ExtraLight.otf"; sourceTree = "<group>"; };
-		DA299A3FAA994503B1615886 /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Bold.otf"; path = "../src/assets/fonts/SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
+		966E342CB6F3428B9035CB85 /* SourceSansPro-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Black.otf"; path = "../src/assets/fonts/SourceSansPro-Black.otf"; sourceTree = "<group>"; };
+		B06112D98CE84548B3003B9E /* SourceSansPro-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Light.otf"; path = "../src/assets/fonts/SourceSansPro-Light.otf"; sourceTree = "<group>"; };
+		C9A9792B9E1E4A3196542AE0 /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Regular.otf"; path = "../src/assets/fonts/SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
+		CAE080F1FC2147D0ADB6E369 /* SourceSansPro-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-ExtraLight.otf"; path = "../src/assets/fonts/SourceSansPro-ExtraLight.otf"; sourceTree = "<group>"; };
+		DA299A3FAA994503B1615886 /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Bold.otf"; path = "../src/assets/fonts/SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
+		E81A9E0F2C024B9C003C4B75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E81A9E112C024CA5003C4B75 /* StoreConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreConfiguration.storekit; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F19998C8458F76AC03212D3D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = aiGammaChat/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F19998C8458F76AC03212D3D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = aiGammaChat/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-aiGammaChat.a in Frameworks */,
+				E81A9E102C024B9C003C4B75 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +116,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				F19998C8458F76AC03212D3D /* PrivacyInfo.xcprivacy */,
+				E81A9E112C024CA5003C4B75 /* StoreConfiguration.storekit */,
 			);
 			name = aiGammaChat;
 			sourceTree = "<group>";
@@ -118,6 +124,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E81A9E0F2C024B9C003C4B75 /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-aiGammaChat.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-aiGammaChat-aiGammaChatTests.a */,
@@ -137,7 +144,6 @@
 				404EC7CB7AE54E9EAD3C63D3 /* SourceSansPro-Semibold.otf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -282,6 +288,7 @@
 				3B23A28C76F549E6A9397C5D /* SourceSansPro-Black.otf in Resources */,
 				5AF3B276620040CFA386B761 /* SourceSansPro-Bold.otf in Resources */,
 				9107BD4E77DA496284510D0E /* SourceSansPro-ExtraLight.otf in Resources */,
+				E81A9E122C024CA5003C4B75 /* StoreConfiguration.storekit in Resources */,
 				DFDBA4ED169F43079360AA67 /* SourceSansPro-It.otf in Resources */,
 				C2F2C84FB5914D4E8A8A3017 /* SourceSansPro-Light.otf in Resources */,
 				76292A34044D4513AE98AE33 /* SourceSansPro-Regular.otf in Resources */,
@@ -509,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 55FR8MFB3T;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = aiGammaChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,7 +529,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeto.aichat;
 				PRODUCT_NAME = aiGammaChat;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -536,6 +544,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 55FR8MFB3T;
 				INFOPLIST_FILE = aiGammaChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,7 +556,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeto.aichat;
 				PRODUCT_NAME = aiGammaChat;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -627,10 +636,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -702,10 +708,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

@@ -21,13 +21,13 @@ const PurchaseButton: FunctionComponent<Props> = ({
   isLoading,
 }: any) => {
   const getSubText = (productId: string): string => {
-    if (productId === 'com.deepart.monthly') {
+    if (productId === 'com.aichat.monthly') {
       return 'Monthly';
     }
-    if (productId === 'com.deepart.yearly') {
+    if (productId === 'com.aichat.yearly') {
       return 'Annual';
     }
-    if (productId === 'com.deepart.lifetime') {
+    if (productId === 'com.aichat.lifetime') {
       return 'Lifetime';
     }
 
@@ -35,10 +35,10 @@ const PurchaseButton: FunctionComponent<Props> = ({
   };
 
   const getInfo = (productId: string): string => {
-    if (productId === 'com.deepart.monthly') {
+    if (productId === 'com.aichat.monthly') {
       return 'Monthly';
     }
-    if (productId === 'com.deepart.yearly') {
+    if (productId === 'com.aichat.yearly') {
       return 'Annually';
     }
 
@@ -74,7 +74,7 @@ const PurchaseButton: FunctionComponent<Props> = ({
               source={require('../../assets/purchase/check.png')}
             />
           )} */}
-          {item.productId === 'com.deepart.yearly' && (
+          {item.productId === 'com.aichat.yearly' && (
             <View style={style.popularTextContainer}>
               <Text style={style.popularText}>Best Offer</Text>
             </View>

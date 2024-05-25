@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {
   PurchaseError,
-  // getSubscriptions,
+  getSubscriptions,
   initConnection,
   requestSubscription,
 } from 'react-native-iap';
@@ -28,21 +28,7 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [subscriptions, setSubscriptions] = useState<any>();
   const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(1);
-  const itemSubs = ['com.deepart.yearly', 'com.deepart.weekly'];
-  const subs = [
-    {
-      productId: 'com.deepart.yearly',
-      title: 'Annual',
-      description: 'Annual Subscription',
-      localizedPrice: '$49.99',
-    },
-    {
-      productId: 'com.deepart.weekly',
-      title: 'Weekly',
-      description: 'Weekly Subscription',
-      localizedPrice: '$4.99',
-    },
-  ];
+  const itemSubs = ['com.aichat.yearly', 'com.aichat.monthly'];
 
   useEffect(() => {
     const bootstrapAsync = async () => {
@@ -51,7 +37,7 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
         await initConnection()
           .then(async () => {
             setTimeout(async () => {
-              // const subs: any = await getSubscriptions({skus: itemSubs});
+              const subs: any = await getSubscriptions({skus: itemSubs});
               subs.sort((a: any, b: any) => {
                 return (
                   itemSubs.indexOf(b.productId) - itemSubs.indexOf(a.productId)
