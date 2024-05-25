@@ -2,7 +2,7 @@ import {Animated, Image, SafeAreaView, View} from 'react-native';
 import {useCallback, useRef, useState} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
 import * as StoreReview from 'react-native-store-review';
-import style from './style';
+import style from './styles';
 import AnimatedView from '../../components/AnimatedView';
 import Button from '../../components/Button';
 import {animateHide, animateVisible, animateVibrate} from '../../utils';

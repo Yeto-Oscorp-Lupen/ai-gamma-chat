@@ -44,6 +44,10 @@ export const theme = {
       700: '#737373',
       main: '#36383C',
     },
+    orange: {
+      600: '#FF9F1E',
+      700: '#EE8908',
+    },
     primary: {
       400: '#3A47AF',
       500: '#131A54',

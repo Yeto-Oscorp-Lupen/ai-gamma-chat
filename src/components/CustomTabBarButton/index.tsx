@@ -24,7 +24,7 @@ const CustomTabBarButton = ({
     }}
     style={style}>
     <View style={[styles.unfocusedTextView, imageStyle]}>
-      {route.name === 'ChatPage' ? (
+      {route.name === 'ChatsPage' ? (
         <Chat
           color={isFocused ? theme.colors.main.white : theme.colors.grey[300]}
           width={28}
@@ -44,9 +44,9 @@ const CustomTabBarButton = ({
             color: isFocused ? theme.colors.main.white : theme.colors.grey[300],
           },
         ]}>
-        {route.name === 'ChatPage'
+        {route.name === 'ChatsPage'
           ? 'Chats'
-          : route.name === 'TaskPage' && 'Tasks for AI'}
+          : route.name === 'TasksPage' && 'Tasks for AI'}
       </Text>
     </View>
   </TouchableHighlight>

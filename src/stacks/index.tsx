@@ -17,8 +17,8 @@ import {
 import IntroPage from '../pages/Intro';
 import WelcomePage from '../pages/Welcome';
 import CustomTabBar from '../components/CustomTabBar';
-import ChatPage from '../pages/Chat';
-import TaskPage from '../pages/Tasks';
+import ChatsPage from '../pages/Chats';
+import TasksPage from '../pages/Tasks';
 import PurchasePage from '../pages/Purchase';
 import SettingsPage from '../pages/Settings';
 import ChatWithGPTPage from '../pages/ChatWithGPT';
@@ -54,8 +54,8 @@ const StackWrapper = () => {
       <Tab.Navigator
         screenOptions={RootTabsScreenOptions}
         tabBar={(props: any) => <CustomTabBar {...props} />}>
-        <Tab.Screen name="ChatPage" component={ChatPage} />
-        <Tab.Screen name="TaskPage" component={TaskPage} />
+        <Tab.Screen name="ChatsPage" component={ChatsPage} />
+        <Tab.Screen name="TasksPage" component={TasksPage} />
       </Tab.Navigator>
     );
   };
