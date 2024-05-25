@@ -18,14 +18,14 @@ import PromptInput from '../../components/PromptInput';
 
 const ChatWithGPTPage = ({route, navigation}: any) => {
   const dispatch = useDispatch();
-  const {desc} = route.params;
+  const {item} = route.params;
   const scrollRef = useRef<ScrollView>(null);
   const {isSubs, freeRights} = useSelector((state: any) => state.app);
 
   const [question, setQuestion] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [conversation, setConversation] = useState<any>([
-    {role: 'system', content: desc},
+    {role: 'system', content: item?.firstMessage},
   ]);
 
   const setNewRightCount = async () => {

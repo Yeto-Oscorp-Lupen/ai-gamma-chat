@@ -15,6 +15,10 @@ export default StyleSheet.create({
     width: 34,
     height: 34,
   },
+  imageText: {
+    marginTop: theme.spacing(0.5),
+    fontSize: 34,
+  },
   nameText: {
     fontFamily: theme.font.bold,
     fontSize: 20,
