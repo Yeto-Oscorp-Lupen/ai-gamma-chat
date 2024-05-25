@@ -66,13 +66,15 @@ export default StyleSheet.create({
   sent: {
     backgroundColor: theme.colors.main.primary,
     alignSelf: 'flex-end',
+    borderBottomEndRadius: 0,
   },
   received: {
     backgroundColor: theme.colors.main.grey,
     alignSelf: 'flex-start',
+    borderEndStartRadius: 0,
   },
   chatBubble: {
-    borderRadius: 10,
+    borderRadius: 20,
     paddingVertical: 12,
     marginBottom: 8,
     maxWidth: WIDTH / 2 + 80,

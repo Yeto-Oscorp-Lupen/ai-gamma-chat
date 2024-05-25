@@ -7,7 +7,7 @@ import TaskItem from '../../components/TaskItem';
 import AnimatedView from '../../components/AnimatedView';
 import {useCallback, useRef, useState, useEffect} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
-import {animateHide, animateVisible} from '../../utils';
+import {animateHide, animateVisible, vibrate} from '../../utils';
 import StickyImageMessage from '../../components/StickyImageMessage';
 import AnimatedPressable from '../../components/AnimatedPressable';
 
@@ -47,6 +47,7 @@ const TasksPage = ({navigation}: any) => {
   };
 
   const handleTaskItemPress = (item: any) => {
+    vibrate();
     navigation.navigate({
       name: 'ChatWithGPTPage',
       params: {
@@ -56,6 +57,7 @@ const TasksPage = ({navigation}: any) => {
   };
 
   const filterTasks = (category: string) => {
+    vibrate();
     setSelectedCategory(category);
     const filteredTasks = TASKS_ITEMS.filter(task => {
       if (category === 'Popular') {

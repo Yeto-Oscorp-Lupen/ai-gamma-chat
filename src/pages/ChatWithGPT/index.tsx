@@ -15,6 +15,7 @@ import {setFreeRight} from '../../store/features/appSlice';
 import AnimatedTyping from '../../utils/AnimatedTyping';
 import styles from './styles';
 import PromptInput from '../../components/PromptInput';
+import { vibrate } from '../../utils';
 
 const ChatWithGPTPage = ({route, navigation}: any) => {
   const dispatch = useDispatch();
@@ -24,7 +25,8 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
 
   const [question, setQuestion] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [conversation, setConversation] = useState<any>([
+  const [conversation, setConversation] = useState<any>([]);
+  const [showingConversation, setShowingConversation] = useState<any>([
     {role: 'system', content: item?.firstMessage},
   ]);
 
@@ -33,7 +35,13 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
     // setFreeRightsFromStorage(freeRights - 1);
   };
 
+  const prepareFirstQuery = (text: string) => {
+    let firstQuery = item.query.replace('{text}', text);
+    return firstQuery;
+  };
+
   const handleSubmit = useCallback(async () => {
+    vibrate();
     // if (!isSubs) {
     //   navigation.navigate('Purchase');
     //   return false;
@@ -41,18 +49,31 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
 
     if (question?.length) {
       setTimeout(() => scrollRef?.current?.scrollToEnd({animated: true}), 200);
-      const newConversation = [
-        ...conversation,
+      let newConversation;
+
+      if (conversation.length === 0) {
+        newConversation = [
+          {role: 'user', content: prepareFirstQuery(question)},
+        ];
+      } else {
+        newConversation = [...conversation, {role: 'user', content: question}];
+      }
+
+      const newShowingConversation = [
+        ...showingConversation,
         {role: 'user', content: question},
       ];
+
       setConversation(newConversation);
+      setShowingConversation(newShowingConversation);
       setQuestion('');
       setIsLoading(true);
       const answer = await askToChatGpt(newConversation);
-      console.warn('answer', answer);
+
       setNewRightCount();
       setIsLoading(false);
       setConversation([...newConversation, answer]);
+      setShowingConversation([...newShowingConversation, answer]);
       setTimeout(() => scrollRef?.current?.scrollToEnd({animated: true}), 200);
     }
   }, [question, conversation]);
@@ -64,6 +85,7 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
     }
     setQuestion('');
     setConversation([]);
+    setShowingConversation([{role: 'system', content: item?.firstMessage}]);
   };
 
   return (
@@ -77,7 +99,7 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
           />
         </TouchableOpacity>
       </View>
-      {Object?.keys(conversation)?.length === 0 ? (
+      {Object?.keys(showingConversation)?.length === 0 ? (
         <View style={styles.container}>
           <Text style={styles.welcomeText}>Welcome to the AI Chatbot!</Text>
         </View>
@@ -88,7 +110,7 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps={'always'}
           contentContainerStyle={styles.scrollView}>
-          {conversation.map((message: any, index: number) => {
+          {showingConversation.map((message: any, index: number) => {
             if (message?.role === 'user') {
               return (
                 <View

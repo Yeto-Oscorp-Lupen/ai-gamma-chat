@@ -183,7 +183,7 @@ export const TASKS_ITEMS = [
     firstMessage: "What is your partner's sex?",
     category: 'Communication',
     query:
-      'Suggest engaging questions for a first date with a {gender} partner: {text}',
+      'Suggest engaging questions for a first date with a partner gender: {text}',
   },
   {
     imageText: '💘',
@@ -191,7 +191,7 @@ export const TASKS_ITEMS = [
     desc: 'Receive romantic date ideas.',
     firstMessage: 'What city are you planning your date in?',
     category: 'Communication',
-    query: 'Suggest romantic date ideas in {city}',
+    query: 'Suggest romantic date ideas in {text}',
   },
   {
     imageText: '🤖',
