@@ -46,4 +46,9 @@ export default StyleSheet.create({
     width: 20,
   },
   logo: {width: 65, height: 16, marginLeft: 5},
+  backButtonForChat: {
+    paddingHorizontal: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

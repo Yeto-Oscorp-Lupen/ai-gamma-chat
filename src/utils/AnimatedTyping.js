@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useRef, useState, useEffect} from 'react';
 import {StyleSheet, Text} from 'react-native';
+import {theme} from '../constants/theme';
 
 export default function AnimatedTyping(props) {
   let [text, setText] = useState('');
@@ -30,7 +31,7 @@ export default function AnimatedTyping(props) {
   timeoutsRef.current = timeouts;
 
   let typingAnimation = () => {
-    if (textIndexRef.current < props.text[messageIndexRef.current].length) {
+    if (textIndexRef.current < props.text[messageIndexRef.current]?.length) {
       setText(
         textRef.current +
           props.text[messageIndexRef.current].charAt(textIndexRef.current),
@@ -98,7 +99,8 @@ export default function AnimatedTyping(props) {
 
 let styles = StyleSheet.create({
   text: {
-    fontWeight: '500',
+    fontFamily: theme.font.semiBold,
+    fontSize: theme.spacing(1.6),
     color: '#ffffff',
     letterSpacing: 0.2,
     alignSelf: 'stretch',

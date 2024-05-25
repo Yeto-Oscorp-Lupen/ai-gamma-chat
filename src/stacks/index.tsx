@@ -12,6 +12,7 @@ import {
   RootTabsStackOptions,
   PurchasePagesOptions,
   SettingsPageOptions,
+  ChatGptPagesOptions,
 } from './options';
 import IntroPage from '../pages/Intro';
 import WelcomePage from '../pages/Welcome';
@@ -20,6 +21,7 @@ import ChatPage from '../pages/Chat';
 import TaskPage from '../pages/Tasks';
 import PurchasePage from '../pages/Purchase';
 import SettingsPage from '../pages/Settings';
+import ChatWithGPTPage from '../pages/ChatWithGPT';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -85,6 +87,11 @@ const StackWrapper = () => {
         options={RootTabsStackOptions}
         name="RootTabs"
         component={RootTabs}
+      />
+      <Stack.Screen
+        options={ChatGptPagesOptions}
+        name="ChatWithGPTPage"
+        component={ChatWithGPTPage}
       />
       <Stack.Group screenOptions={{presentation: 'card'}}>
         <Stack.Screen

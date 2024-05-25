@@ -120,6 +120,50 @@ export const PurchasePagesOptions = ({
   ),
 });
 
+export const ChatGptPagesOptions = ({
+  navigation,
+}: OptionsPropsType & NativeStackNavigationOptionsType) => ({
+  gestureEnabled: false,
+  title: 'Gamma AI',
+  headerShadowVisible: false,
+  headerTitleStyle: {
+    color: theme.colors.main.white, // Change the color
+    fontFamily: theme.font.bold, // Change the font family,
+    fontSize: 16,
+  },
+  headerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: theme.colors.main.grey,
+    borderBottomColor: theme.colors.main.grey,
+  },
+  transitionSpec: {
+    animation: 'timing',
+    config: {
+      duration: COMMON_ANIMATION_DURATION,
+    },
+  },
+  headerLeft: () => (
+    <Pressable
+      style={styles.backButtonForChat}
+      onPress={() => {
+        vibrate();
+        navigation.goBack();
+      }}>
+      <ArrowLeft style={styles.backButtonIcon} width={18} height={18} />
+    </Pressable>
+  ),
+  headerRight: () => (
+    <Pressable
+      style={styles.backButtonForChat}
+      onPress={() => {
+        onPressSettingsButton(navigation);
+      }}>
+      <SettingsFill style={styles.backButtonIcon} width={20} height={20} />
+    </Pressable>
+  ),
+});
+
 export const SettingsPageOptions = ({
   navigation,
 }: OptionsPropsType & NativeStackNavigationOptionsType) => ({

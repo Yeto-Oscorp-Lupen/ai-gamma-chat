@@ -10,7 +10,7 @@ import {useFocusEffect} from '@react-navigation/native';
 import {animateHide, animateVisible} from '../../utils';
 import StickyImageMessage from '../../components/StickyImageMessage';
 
-const TasksPage = () => {
+const TasksPage = ({navigation}: any) => {
   const actionAnimatedValue = useRef(new Animated.Value(0)).current;
 
   useFocusEffect(
@@ -19,6 +19,10 @@ const TasksPage = () => {
       return () => animateHide(actionAnimatedValue);
     }, []),
   );
+
+  const handleTaskItemPress = (desc: any) => {
+    navigation.navigate({name: 'ChatWithGPTPage', params: {desc}});
+  };
 
   return (
     <View style={styles.safeAreaContainer}>
@@ -37,6 +41,7 @@ const TasksPage = () => {
               imageUrl={task.imageUrl}
               name={task.name}
               desc={task.desc}
+              onPress={() => handleTaskItemPress(task.desc)}
             />
           )}
         />
