@@ -58,7 +58,7 @@ const HintBox = ({hint, animatedValue}: HintBoxPropsType) => (
       <Text style={styles.hintText}>{hint.title}</Text>
     </AnimatedView>
     {hint.questions.map((question: string, i: number) => (
-      <AnimatedView animatedValue={animatedValue}>
+      <AnimatedView animatedValue={animatedValue} key={i}>
         <AnimatedPressable
           key={i}
           onPress={() => console.log('pressed')}

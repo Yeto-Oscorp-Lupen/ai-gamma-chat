@@ -2,12 +2,10 @@ import {View} from 'react-native';
 import CustomTabBarButton from '../CustomTabBarButton';
 import styles from './styles';
 
-const CustomTabBar = ({state, descriptors, navigation}: any) => (
+const CustomTabBar = ({state, navigation}: any) => (
   <View style={styles.mainDiv}>
-    {state.routes.map((route: any, index: any) => {
-      const {options} = descriptors[route.key];
-
-      const isFocused = state.index === index;
+    {state.routes.map((route: any, i: number) => {
+      const isFocused = state.index === i;
 
       const onPress = () => {
         const event = navigation.emit({
@@ -22,10 +20,9 @@ const CustomTabBar = ({state, descriptors, navigation}: any) => (
 
       return (
         <CustomTabBarButton
-          key={index}
+          key={i}
           route={route}
           isFocused={isFocused}
-          options={options}
           onPress={onPress}
         />
       );

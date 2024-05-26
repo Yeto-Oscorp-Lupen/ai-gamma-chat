@@ -5,11 +5,7 @@ export default StyleSheet.create({
     fontSize: 12,
     marginTop: 4,
   },
-  focusedTextView: {
-    alignItems: 'center',
-  },
-  unfocusedTextView: {
-    borderBottomColor: 'transparent',
+  button: {
     alignItems: 'center',
   },
 });
