@@ -12,15 +12,15 @@ import {getPurchases} from './utils';
 const App = () => {
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   init();
-  // }, []);
+  useEffect(() => {
+    init();
+  }, []);
 
-  // const init = async () => {
-  //   const sub = await getPurchases(true);
-  //   dispatch(setIsSubs(sub));
-  //   SplashScreen.hide();
-  // };
+  const init = async () => {
+    const sub = await getPurchases(true);
+    dispatch(setIsSubs(sub));
+    SplashScreen.hide();
+  };
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
