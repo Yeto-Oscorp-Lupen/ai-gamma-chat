@@ -11,7 +11,7 @@ export const theme = {
       grey: '#333438',
     },
     background: {
-      base: '#16171B',
+      base: '#232126',
       purchase: '#232126',
       secondary: '#333438',
       overlay: 'rgba(46, 38, 68, 0.85)',

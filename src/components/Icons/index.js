@@ -1,5 +1,5 @@
 export {default as ArrowRight} from './ArrowRight';
-export {default as ArrowLeft} from './ArrowLeft';
+export {default as ArrowRightSafe} from './ArrowRightSafe';
 export {default as BackFill} from './BackFill';
 export {default as Chat} from './Chat';
 export {default as ContactFill} from './ContactFill';

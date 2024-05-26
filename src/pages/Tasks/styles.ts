@@ -4,7 +4,7 @@ import {theme} from '../../constants/theme';
 export default StyleSheet.create({
   safeAreaContainer: {
     flex: 1,
-    backgroundColor: theme.colors.main.black,
+    backgroundColor: theme.colors.background.base,
   },
   columnWrapper: {
     gap: 5,
