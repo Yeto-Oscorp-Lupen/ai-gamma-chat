@@ -3,7 +3,7 @@ import {COMMON_ANIMATION_DURATION} from '../constants';
 import {theme} from '../constants/theme';
 import type {NativeStackNavigationOptions as NativeStackNavigationOptionsType} from '@react-navigation/native-stack';
 import styles from './style';
-import {ArrowLeft, CrossFill, SettingsFill} from '../components/Icons';
+import {CrossFill, SettingsFill} from '../components/Icons';
 import {vibrate} from '../utils';
 import {NavigationType} from '../types';
 
@@ -93,7 +93,7 @@ export const ResultPagesOptions = ({
         vibrate();
         navigation.goBack();
       }}>
-      <ArrowLeft style={styles.backButtonIcon} width={12} height={20} />
+      <CrossFill style={styles.backButtonIcon} width={12} height={20} />
     </Pressable>
   ),
 });
@@ -150,7 +150,7 @@ export const ChatGptPagesOptions = ({
         vibrate();
         navigation.goBack();
       }}>
-      <ArrowLeft style={styles.backButtonIcon} width={18} height={18} />
+      <CrossFill style={styles.backButtonIcon} width={18} height={18} />
     </Pressable>
   ),
   headerRight: () => (
