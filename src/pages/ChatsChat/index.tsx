@@ -1,4 +1,4 @@
-import {useCallback, useRef, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import {
   Image,
   KeyboardAvoidingView,
@@ -16,28 +16,29 @@ import {setFreeRight} from '../../store/features/appSlice';
 import {vibrate} from '../../utils';
 import AnimatedTyping from '../../utils/AnimatedTyping';
 import styles from './styles';
+import {Refresh} from '../../components/Icons';
 
-const ChatWithGPTPage = ({route, navigation}: any) => {
+const ChatsChatPage = ({route, navigation}: any) => {
   const dispatch = useDispatch();
-  const {item} = route.params;
+  const {initialPrompt} = route.params;
   const scrollRef = useRef<ScrollView>(null);
   const {isSubs, freeRights} = useSelector((state: any) => state.app);
 
   const [question, setQuestion] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [conversation, setConversation] = useState<any>([]);
-  const [showingConversation, setShowingConversation] = useState<any>([
-    {role: 'system', content: item?.firstMessage},
-  ]);
+
+  useEffect(() => {
+    console.log('initialPrompt', initialPrompt);
+    if (initialPrompt) {
+      setQuestion(initialPrompt);
+      handleSubmit();
+    }
+  }, []);
 
   const setNewRightCount = async () => {
     dispatch(setFreeRight(freeRights - 1));
     // setFreeRightsFromStorage(freeRights - 1);
-  };
-
-  const prepareFirstQuery = (text: string) => {
-    let firstQuery = item.query.replace('{text}', text);
-    return firstQuery;
   };
 
   const handleSubmit = useCallback(async () => {
@@ -49,23 +50,13 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
 
     if (question?.length) {
       setTimeout(() => scrollRef?.current?.scrollToEnd({animated: true}), 200);
-      let newConversation;
 
-      if (conversation.length === 0) {
-        newConversation = [
-          {role: 'user', content: prepareFirstQuery(question)},
-        ];
-      } else {
-        newConversation = [...conversation, {role: 'user', content: question}];
-      }
-
-      const newShowingConversation = [
-        ...showingConversation,
+      const newConversation = [
+        ...conversation,
         {role: 'user', content: question},
       ];
 
       setConversation(newConversation);
-      setShowingConversation(newShowingConversation);
       setQuestion('');
       setIsLoading(true);
       const answer = await askToChatGpt(newConversation);
@@ -73,7 +64,6 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
       setNewRightCount();
       setIsLoading(false);
       setConversation([...newConversation, answer]);
-      setShowingConversation([...newShowingConversation, answer]);
       setTimeout(() => scrollRef?.current?.scrollToEnd({animated: true}), 200);
     }
   }, [question, conversation]);
@@ -85,22 +75,17 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
     }
     setQuestion('');
     setConversation([]);
-    setShowingConversation([{role: 'system', content: item?.firstMessage}]);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity style={styles.refreshButton} onPress={refresh}>
-          <Image
-            resizeMode="contain"
-            source={require('../../assets/tasks/aiArt.png')}
-            style={styles.refresh}
-          />
+          <Refresh style={styles.refresh} width={20} height={20} />
         </TouchableOpacity>
       </View>
-      {Object?.keys(showingConversation)?.length === 0 ? (
-        <View style={styles.container}>
+      {Object?.keys(conversation)?.length === 0 ? (
+        <View style={styles.containerEmpty}>
           <Text style={styles.welcomeText}>Welcome to the AI Chatbot!</Text>
         </View>
       ) : (
@@ -110,7 +95,7 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps={'always'}
           contentContainerStyle={styles.scrollView}>
-          {showingConversation.map((message: any, index: number) => {
+          {conversation.map((message: any, index: number) => {
             if (message?.role === 'user') {
               return (
                 <View
@@ -164,4 +149,4 @@ const ChatWithGPTPage = ({route, navigation}: any) => {
   );
 };
 
-export default ChatWithGPTPage;
+export default ChatsChatPage;

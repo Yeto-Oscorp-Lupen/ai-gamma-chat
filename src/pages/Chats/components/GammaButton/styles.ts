@@ -24,11 +24,11 @@ export default StyleSheet.create({
   gammaButtonTitle: {
     color: theme.colors.orange[700],
     fontWeight: '700',
-    fontSize: 19,
+    fontSize: 17,
   },
   gammaButtonDescription: {
     color: theme.colors.orange[600],
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: '400',
   },
   gammaButtonArrow: {

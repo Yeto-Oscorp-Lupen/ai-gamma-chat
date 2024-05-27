@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
-import {useCallback} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {useFocusEffect} from '@react-navigation/native';
 import {StatusBar} from 'react-native';
@@ -21,27 +21,32 @@ import ChatsPage from '../pages/Chats';
 import TasksPage from '../pages/Tasks';
 import PurchasePage from '../pages/Purchase';
 import SettingsPage from '../pages/Settings';
-import ChatWithGPTPage from '../pages/ChatWithGPT';
+import TasksChatPage from '../pages/TasksChat';
+import ChatsChatPage from '../pages/ChatsChat';
+import {
+  getIsFirstLaunchFromStorage,
+  setIsFirstLaunchToStorage,
+} from '../utils/storage';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const StackWrapper = () => {
-  // const [isFirstLaunch, setIsFirstLaunch] = useState<any>(undefined);
+  const [isFirstLaunch, setIsFirstLaunch] = useState<any>(undefined);
 
-  // useEffect(() => {
-  //   returnIsFirstLaunch();
-  // }, []);
+  useEffect(() => {
+    returnIsFirstLaunch();
+  }, []);
 
-  // const returnIsFirstLaunch = async () => {
-  //   const isFirstLaunchInner = await getIsFirstLaunchFromStorage();
-  //   if (isFirstLaunchInner) {
-  //     setIsFirstLaunch('false');
-  //   } else {
-  //     setIsFirstLaunch('true');
-  //     setIsFirstLaunchToStorage('true');
-  //   }
-  // };
+  const returnIsFirstLaunch = async () => {
+    const isFirstLaunchInner = await getIsFirstLaunchFromStorage();
+    if (isFirstLaunchInner) {
+      setIsFirstLaunch('false');
+    } else {
+      setIsFirstLaunch('true');
+      setIsFirstLaunchToStorage('true');
+    }
+  };
 
   useFocusEffect(
     useCallback(() => {
@@ -60,14 +65,14 @@ const StackWrapper = () => {
     );
   };
 
-  // if (!isFirstLaunch) {
-  //   return null;
-  // }
+  if (!isFirstLaunch) {
+    return null;
+  }
 
   return (
     <Stack.Navigator
       screenOptions={StackNavigatorScreenOptions as any}
-      initialRouteName={'RootTabs'}>
+      initialRouteName={isFirstLaunch === 'true' ? 'WelcomePage' : 'RootTabs'}>
       <Stack.Screen
         options={IntroPageStackOptions}
         name="WelcomePage"
@@ -90,8 +95,13 @@ const StackWrapper = () => {
       />
       <Stack.Screen
         options={ChatGptPagesOptions}
-        name="ChatWithGPTPage"
-        component={ChatWithGPTPage}
+        name="ChatsChatPage"
+        component={ChatsChatPage}
+      />
+      <Stack.Screen
+        options={ChatGptPagesOptions}
+        name="TasksChatPage"
+        component={TasksChatPage}
       />
       <Stack.Group screenOptions={{presentation: 'card'}}>
         <Stack.Screen

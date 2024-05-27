@@ -7,13 +7,14 @@ import {AnimatedValueType} from '../../../../types';
 
 type GammaButtonPropsType = {
   animatedValue: AnimatedValueType;
+  navigation: any;
 };
 
-const GammaButton = ({animatedValue}: GammaButtonPropsType) => (
+const GammaButton = ({animatedValue, navigation}: GammaButtonPropsType) => (
   <AnimatedView animatedValue={animatedValue}>
     <AnimatedPressable
       style={styles.gammaButton}
-      onPress={() => console.log('pressed')}>
+      onPress={() => navigation.navigate('PurchasePage')}>
       <Image
         resizeMode="contain"
         source={require('../../../../assets/chats/gamma.png')}
@@ -25,7 +26,7 @@ const GammaButton = ({animatedValue}: GammaButtonPropsType) => (
           Tap to claim your offer now!
         </Text>
       </View>
-      <ArrowRightSafe style={styles.gammaButtonArrow} />
+      <ArrowRightSafe width={20} height={20} style={styles.gammaButtonArrow} />
     </AnimatedPressable>
   </AnimatedView>
 );

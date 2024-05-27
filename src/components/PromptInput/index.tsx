@@ -1,7 +1,8 @@
 import React from 'react';
-import {Image, TextInput, TouchableOpacity} from 'react-native';
+import {TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import {theme} from '../../constants/theme';
+import {Send} from '../Icons';
 
 export type Props = {
   text: string;
@@ -49,11 +50,7 @@ const PromptInput: React.FC<Props> = ({
         style={[styles.sendButton, buttonStyle]}
         onPress={onSubmitEditing}
         disabled={!text?.length}>
-        <Image
-          resizeMode="contain"
-          source={require('../../assets/chat/send.png')}
-          style={[styles.sendIcon, iconStyle]}
-        />
+        <Send style={iconStyle} />
       </TouchableOpacity>
     </>
   );

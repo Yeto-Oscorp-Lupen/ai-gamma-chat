@@ -45,14 +45,16 @@ const HINTS: HintType[] = [
 
 type QuickAnswersBoxPropsType = {
   animatedValue: AnimatedValueType;
+  navigation: any;
 };
 
 type HintBoxPropsType = {
   hint: HintType;
   animatedValue: AnimatedValueType;
+  navigation: any;
 };
 
-const HintBox = ({hint, animatedValue}: HintBoxPropsType) => (
+const HintBox = ({hint, animatedValue, navigation}: HintBoxPropsType) => (
   <View style={styles.hintContainer}>
     <AnimatedView animatedValue={animatedValue}>
       <Text style={styles.hintText}>{hint.title}</Text>
@@ -61,7 +63,11 @@ const HintBox = ({hint, animatedValue}: HintBoxPropsType) => (
       <AnimatedView animatedValue={animatedValue} key={i}>
         <AnimatedPressable
           key={i}
-          onPress={() => console.log('pressed')}
+          onPress={() =>
+            navigation.navigate('ChatsChatPage', {
+              initialPrompt: question,
+            })
+          }
           style={styles.answerButton}>
           <Text style={styles.hintText}>{question}</Text>
         </AnimatedPressable>
@@ -70,14 +76,22 @@ const HintBox = ({hint, animatedValue}: HintBoxPropsType) => (
   </View>
 );
 
-const QuickAnswersBox = ({animatedValue}: QuickAnswersBoxPropsType) => (
+const QuickAnswersBox = ({
+  animatedValue,
+  navigation,
+}: QuickAnswersBoxPropsType) => (
   <View style={styles.container}>
     <AnimatedView animatedValue={animatedValue}>
       <Text style={styles.title}>Get Help with Any Task</Text>
     </AnimatedView>
     <View style={styles.hintsContainer}>
       {HINTS.map((hint: HintType, i: number) => (
-        <HintBox key={i} hint={hint} animatedValue={animatedValue} />
+        <HintBox
+          navigation={navigation}
+          key={i}
+          hint={hint}
+          animatedValue={animatedValue}
+        />
       ))}
     </View>
   </View>

@@ -49,7 +49,7 @@ const TasksPage = ({navigation}: any) => {
   const handleTaskItemPress = (item: any) => {
     vibrate();
     navigation.navigate({
-      name: 'ChatWithGPTPage',
+      name: 'TasksChatPage',
       params: {
         item,
       },

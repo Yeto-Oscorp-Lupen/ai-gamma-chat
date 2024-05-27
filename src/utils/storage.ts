@@ -1,5 +1,21 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+export const getIsFirstLaunchFromStorage = async () => {
+  try {
+    return await AsyncStorage.getItem('@isFirstLaunch');
+  } catch (e) {
+    console.warn(e);
+  }
+};
+
+export const setIsFirstLaunchToStorage = (isFirstLaunch: string) => {
+  try {
+    AsyncStorage.setItem('@isFirstLaunch', isFirstLaunch);
+  } catch (e) {
+    console.warn(e);
+  }
+};
+
 export const getFreeRightsFromStorage = async () => {
   try {
     const freeRights = await AsyncStorage.getItem('@freeRights');

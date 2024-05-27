@@ -9,7 +9,7 @@ import styles from './styles';
 import StickyImageMessage from '../../components/StickyImageMessage';
 import {AnimatedValueType} from '../../types';
 
-const ChatsPage = () => {
+const ChatsPage = ({navigation}: any) => {
   const commonAnimatedValue = useRef<AnimatedValueType>(
     new Animated.Value(0),
   ).current;
@@ -27,11 +27,22 @@ const ChatsPage = () => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContainer}>
-        <GammaButton animatedValue={commonAnimatedValue} />
-        <GetHelpBox animatedValue={commonAnimatedValue} />
-        <QuickAnswersBox animatedValue={commonAnimatedValue} />
+        <GammaButton
+          navigation={navigation}
+          animatedValue={commonAnimatedValue}
+        />
+        <GetHelpBox
+          navigation={navigation}
+          animatedValue={commonAnimatedValue}
+        />
+        <QuickAnswersBox
+          navigation={navigation}
+          animatedValue={commonAnimatedValue}
+        />
       </ScrollView>
-      <StickyImageMessage />
+      <StickyImageMessage
+        onPress={() => navigation.navigate('ChatsChatPage')}
+      />
     </View>
   );
 };

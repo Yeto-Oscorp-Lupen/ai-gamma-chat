@@ -45,11 +45,13 @@ const HELP_BUTTONS_INFO: HelpButton[] = [
 
 type GetHelpBoxPropsType = {
   animatedValue: AnimatedValueType;
+  navigation: any;
 };
 
 type HelpButtonPropsType = HelpButton & {
   index: number;
   animatedValue: AnimatedValueType;
+  navigation: any;
 };
 
 const HelpButton = ({
@@ -58,6 +60,7 @@ const HelpButton = ({
   image,
   index,
   animatedValue,
+  navigation,
 }: HelpButtonPropsType) => {
   const isButtonLarge = index % 3 === 0;
 
@@ -65,7 +68,7 @@ const HelpButton = ({
     <AnimatedView animatedValue={animatedValue}>
       <AnimatedPressable
         style={[styles.button, isButtonLarge && styles.buttonLarge]}
-        onPress={() => console.log('pressed')}>
+        onPress={() => console.log('asefasd')}>
         <View
           style={[
             styles.buttonInfoContainer,
@@ -84,7 +87,7 @@ const HelpButton = ({
   );
 };
 
-const GetHelpBox = ({animatedValue}: GetHelpBoxPropsType) => (
+const GetHelpBox = ({animatedValue, navigation}: GetHelpBoxPropsType) => (
   <View style={styles.container}>
     <AnimatedView animatedValue={animatedValue}>
       <Text style={styles.title}>Get Help with Any Task</Text>
@@ -97,6 +100,7 @@ const GetHelpBox = ({animatedValue}: GetHelpBoxPropsType) => (
         {HELP_BUTTONS_INFO.map((helpButtonInfo: HelpButton, i: number) => (
           <HelpButton
             key={i}
+            navigation={navigation}
             title={helpButtonInfo.title}
             description={helpButtonInfo.description}
             image={helpButtonInfo.image}
