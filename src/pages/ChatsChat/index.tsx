@@ -20,7 +20,6 @@ import {Refresh} from '../../components/Icons';
 
 const ChatsChatPage = ({route, navigation}: any) => {
   const dispatch = useDispatch();
-  const {initialPrompt} = route.params;
   const scrollRef = useRef<ScrollView>(null);
   const {isSubs, freeRights} = useSelector((state: any) => state.app);
 
@@ -29,9 +28,8 @@ const ChatsChatPage = ({route, navigation}: any) => {
   const [conversation, setConversation] = useState<any>([]);
 
   useEffect(() => {
-    console.log('initialPrompt', initialPrompt);
-    if (initialPrompt) {
-      setQuestion(initialPrompt);
+    if (route?.params?.initialPrompt) {
+      setQuestion(route.params.initialPrompt);
       handleSubmit();
     }
   }, []);
