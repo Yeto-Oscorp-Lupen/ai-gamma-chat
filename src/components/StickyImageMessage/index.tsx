@@ -22,12 +22,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 82,
     width: WIDTH,
-    height: 53,
+    height: 70,
     backgroundColor: theme.colors.main.black,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   image: {
     width: WIDTH,
-    height: 50,
+    height: 70,
   },
 });
 

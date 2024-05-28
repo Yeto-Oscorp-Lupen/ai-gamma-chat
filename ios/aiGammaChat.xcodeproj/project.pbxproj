@@ -515,8 +515,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 55FR8MFB3T;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 56Y6PRAVAC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = aiGammaChat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gamma AI";
@@ -545,8 +545,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 55FR8MFB3T;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 56Y6PRAVAC;
 				INFOPLIST_FILE = aiGammaChat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gamma AI";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -640,10 +640,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -715,10 +712,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
