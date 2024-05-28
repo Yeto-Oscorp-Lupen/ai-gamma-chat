@@ -4,6 +4,7 @@ import {theme} from '../../../../constants/theme';
 export default StyleSheet.create({
   container: {
     gap: 8,
+    marginTop: 20,
   },
   title: {
     fontSize: 20,

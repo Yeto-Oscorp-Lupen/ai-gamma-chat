@@ -91,7 +91,7 @@ export default function AnimatedTyping(props) {
       selectionColor={'yellow'}
       style={[styles.text, props.style]}>
       {text}
-      <Text style={{color: cursorColor, fontSize: theme.spacing(2.2)}}>|</Text>
+      <Text style={{color: cursorColor, fontSize: theme.spacing(2)}}>|</Text>
     </Text>
   );
 }
@@ -99,7 +99,7 @@ export default function AnimatedTyping(props) {
 let styles = StyleSheet.create({
   text: {
     fontFamily: theme.font.semiBold,
-    fontSize: theme.spacing(2.2),
+    fontSize: theme.spacing(2),
     color: '#ffffff',
     letterSpacing: 0.2,
     alignSelf: 'stretch',

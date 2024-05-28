@@ -8,6 +8,6 @@ export default StyleSheet.create({
   },
   scrollViewContainer: {
     gap: 16,
-    paddingBottom: 145,
+    paddingBottom: 155,
   },
 });
