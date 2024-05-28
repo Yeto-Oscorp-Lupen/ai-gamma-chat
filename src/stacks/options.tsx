@@ -1,4 +1,4 @@
-import {Pressable} from 'react-native';
+import {Platform, Pressable} from 'react-native';
 import {COMMON_ANIMATION_DURATION} from '../constants';
 import {theme} from '../constants/theme';
 import type {NativeStackNavigationOptions as NativeStackNavigationOptionsType} from '@react-navigation/native-stack';
@@ -37,6 +37,7 @@ export const RootTabsScreenOptions = ({
   animation: 'shift',
   title: 'Gamma AI',
   headerShadowVisible: false,
+  headerTitleAlign: 'center',
   headerTitleStyle: {
     color: theme.colors.main.white, // Change the color
     fontFamily: theme.font.bold, // Change the font family,
@@ -71,33 +72,6 @@ export const RootTabsScreenOptions = ({
   }),
 });
 
-export const ResultPagesOptions = ({
-  navigation,
-}: OptionsPropsType & NativeStackNavigationOptionsType) => ({
-  gestureEnabled: false,
-  title: 'Result',
-  headerShadowVisible: false,
-  headerStyle: {
-    backgroundColor: 'transparent',
-    borderBottomColor: 'transparent',
-  },
-  headerTitleStyle: {
-    color: theme.colors.main.white, // Change the color
-    fontFamily: 'SFProRounded-Regular', // Change the font family,
-    fontSize: 22,
-  },
-  headerLeft: () => (
-    <Pressable
-      style={styles.backButton}
-      onPress={() => {
-        vibrate();
-        navigation.goBack();
-      }}>
-      <CrossFill style={styles.backButtonIcon} width={12} height={20} />
-    </Pressable>
-  ),
-});
-
 export const PurchasePagesOptions = ({
   navigation,
 }: OptionsPropsType & NativeStackNavigationOptionsType) => ({
@@ -105,8 +79,10 @@ export const PurchasePagesOptions = ({
   title: '',
   headerShadowVisible: false,
   headerStyle: {
-    backgroundColor: 'transparent',
-    borderBottomColor: 'transparent',
+    backgroundColor:
+      Platform.OS === 'ios' ? 'transparent' : theme.colors.background.purchase,
+    borderBottomColor:
+      Platform.OS === 'ios' ? 'transparent' : theme.colors.background.purchase,
   },
   headerLeft: () => (
     <Pressable
@@ -125,6 +101,7 @@ export const ChatGptPagesOptions = ({
 }: OptionsPropsType & NativeStackNavigationOptionsType) => ({
   gestureEnabled: false,
   title: 'Gamma AI',
+  headerTitleAlign: 'center',
   headerShadowVisible: false,
   headerTitleStyle: {
     color: theme.colors.main.white, // Change the color
@@ -168,6 +145,7 @@ export const SettingsPageOptions = ({
   navigation,
 }: OptionsPropsType & NativeStackNavigationOptionsType) => ({
   headerShown: true,
+  headerTitleAlign: 'center',
   title: 'Settings',
   headerTitleStyle: {
     color: theme.colors.main.white,

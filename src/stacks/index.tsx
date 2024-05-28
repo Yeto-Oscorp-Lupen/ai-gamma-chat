@@ -57,7 +57,7 @@ const StackWrapper = () => {
   const RootTabs = () => {
     return (
       <Tab.Navigator
-        screenOptions={RootTabsScreenOptions}
+        screenOptions={RootTabsScreenOptions as any}
         tabBar={(props: any) => <CustomTabBar {...props} />}>
         <Tab.Screen name="ChatsPage" component={ChatsPage} />
         <Tab.Screen name="TasksPage" component={TasksPage} />
@@ -94,12 +94,12 @@ const StackWrapper = () => {
         component={RootTabs}
       />
       <Stack.Screen
-        options={ChatGptPagesOptions}
+        options={ChatGptPagesOptions as any}
         name="ChatsChatPage"
         component={ChatsChatPage}
       />
       <Stack.Screen
-        options={ChatGptPagesOptions}
+        options={ChatGptPagesOptions as any}
         name="TasksChatPage"
         component={TasksChatPage}
       />

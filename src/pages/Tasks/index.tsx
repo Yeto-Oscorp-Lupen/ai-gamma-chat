@@ -107,6 +107,7 @@ const TasksPage = ({navigation}: any) => {
             numColumns={2}
             columnWrapperStyle={styles.columnWrapper}
             showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             ListFooterComponent={() => <View style={styles.seperator} />}
             renderItem={({item: task, index}) => (
               <Animated.View
@@ -133,7 +134,9 @@ const TasksPage = ({navigation}: any) => {
           />
         </AnimatedView>
       </View>
-      <StickyImageMessage />
+      <StickyImageMessage
+        onPress={() => navigation.navigate('ChatsChatPage')}
+      />
     </>
   );
 };

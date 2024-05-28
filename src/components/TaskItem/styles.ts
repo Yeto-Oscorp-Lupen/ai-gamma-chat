@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
 import {theme} from '../../constants/theme';
+import {WIDTH} from '../../constants';
 
 export default StyleSheet.create({
   container: {
-    width: 175,
-    height: 140,
+    width: WIDTH / 2 - theme.spacing(2.7),
+    height: WIDTH / 2 - theme.spacing(2.7) - 50,
     backgroundColor: theme.colors.main.grey,
     padding: 10,
     margin: theme.spacing(1),

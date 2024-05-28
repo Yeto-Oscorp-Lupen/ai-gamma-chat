@@ -3,6 +3,7 @@ import {
   Alert,
   ImageBackground,
   Linking,
+  Platform,
   Text,
   TouchableHighlight,
   View,
@@ -28,7 +29,10 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [subscriptions, setSubscriptions] = useState<any>();
   const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(1);
-  const itemSubs = ['com.aichat.yearly', 'com.aichat.monthly'];
+  const itemSubs = Platform.select({
+    ios: ['com.aichat.monthly', 'com.aichat.yearly'],
+    android: ['com.yeto.monthly', 'com.yeto.yearly'],
+  } as any);
 
   useEffect(() => {
     const bootstrapAsync = async () => {
@@ -37,10 +41,13 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
         await initConnection()
           .then(async () => {
             setTimeout(async () => {
-              const subs: any = await getSubscriptions({skus: itemSubs});
+              const subs: any = await getSubscriptions({
+                skus: itemSubs as string[],
+              });
               subs.sort((a: any, b: any) => {
                 return (
-                  itemSubs.indexOf(b.productId) - itemSubs.indexOf(a.productId)
+                  (itemSubs as string[]).indexOf(b.productId) -
+                  (itemSubs as string[]).indexOf(a.productId)
                 );
               });
 
@@ -57,6 +64,7 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
   }, []);
 
   const beSubs = async (sku: any) => {
+    console.log(sku);
     if (!sku.length) {
       return false;
     }

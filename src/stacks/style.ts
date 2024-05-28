@@ -20,6 +20,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   backView: {
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
