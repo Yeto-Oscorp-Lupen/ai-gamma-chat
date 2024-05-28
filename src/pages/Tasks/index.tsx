@@ -117,7 +117,11 @@ const TasksPage = ({navigation}: any) => {
             columnWrapperStyle={styles.columnWrapper}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
-            ListFooterComponent={() => <View style={styles.seperator} />}
+            ListFooterComponent={() => (
+              <View
+                style={isSubs ? styles.seperator : styles.seperatorIsNotSub}
+              />
+            )}
             renderItem={({item: task, index}) => (
               <Animated.View
                 style={{

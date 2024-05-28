@@ -17,6 +17,7 @@ import {vibrate} from '../../utils';
 import AnimatedTyping from '../../utils/AnimatedTyping';
 import {Refresh} from '../../components/Icons';
 import styles from './styles';
+import {setFreeRightsToStorage} from '../../utils/storage';
 
 const TasksChatPage = ({route, navigation}: any) => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const TasksChatPage = ({route, navigation}: any) => {
 
   const setNewRightCount = async () => {
     dispatch(setFreeRight(freeRights - 1));
-    // setFreeRightsFromStorage(freeRights - 1);
+    setFreeRightsToStorage(freeRights - 1);
   };
 
   const prepareFirstQuery = (text: string) => {

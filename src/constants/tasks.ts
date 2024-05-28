@@ -211,7 +211,7 @@ export const TASKS_ITEMS = [
     query: 'Solve the following equation: {text}',
   },
   {
-    name: 'Coding Interview Questions',
+    name: 'Coding Questions',
     imageText: '💻',
     desc: 'Create well-written interview questions.',
     firstMessage: 'Which coding language you want?',
@@ -265,7 +265,7 @@ export const TASKS_ITEMS = [
       'Create the short film scenario about {text}. Do not write explanations in replies.',
   },
   {
-    name: 'Company Biography',
+    name: 'Company Bio',
     imageText: '📋',
     desc: 'Briefly tell the story of your company.',
     firstMessage: 'Company Name and Company aim?',
@@ -301,7 +301,7 @@ export const TASKS_ITEMS = [
       'Create an impressive advertisement text about "{text}". Do not write explanations in replies.',
   },
   {
-    name: 'Job Advertisement',
+    name: 'Job Ads',
     imageText: '📰',
     desc: 'Write a job description that attracts ideal candidates.',
     firstMessage: 'What position are you hiring for?',

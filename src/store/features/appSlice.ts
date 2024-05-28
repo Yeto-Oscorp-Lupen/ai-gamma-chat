@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {Platform} from 'react-native';
 
 const initialState = {
   isSubs: undefined,
   collection: [],
-  freeRights: 10,
+  freeRights: Platform.OS === 'ios' ? 2 : 10,
 };
 
 export const appSlice = createSlice({

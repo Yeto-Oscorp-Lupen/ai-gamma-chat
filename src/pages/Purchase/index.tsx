@@ -27,8 +27,8 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
   const dispatch = useDispatch();
 
   const [loading, setLoading] = useState<boolean>(true);
-  const [subscriptions, setSubscriptions] = useState<any>();
-  const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(1);
+  const [subscriptions, setSubscriptions] = useState<any>([]);
+  const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(0);
   const itemSubs = Platform.select({
     ios: ['com.aichat.monthly', 'com.aichat.yearly'],
     android: ['com.yeto.monthly', 'com.yeto.yearly'],
@@ -64,12 +64,11 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
   }, []);
 
   const beSubs = async (sku: any) => {
-    console.log(sku);
     if (!sku.length) {
       return false;
     }
     setLoading(true);
-    await requestSubscription({sku: sku})
+    await requestSubscription({sku})
       .then(async () => {
         Alert.alert('Purchase Success', 'Thank you for your purchase!');
         dispatch(setIsSubs(true));
@@ -87,7 +86,7 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
   };
 
   const handlePurchaseButton = () => {
-    beSubs(subscriptions[selectedPurchaseIndex].productId || '');
+    beSubs(subscriptions[selectedPurchaseIndex]?.productId || '');
   };
 
   const handlePurchaseTypeButton = (subIndex: number) => {
@@ -116,16 +115,18 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
       source={require('../../assets/purchase/purchase-info.png')}
       style={styles.mainBackground}>
       <View style={styles.imagesContainer}>
-        {(subscriptions || itemSubs).map((item: any, index: number) => (
-          <PurchaseButton
-            key={index}
-            subIndex={index}
-            handlePurchaseTypeButton={handlePurchaseTypeButton}
-            item={item}
-            isSelected={selectedPurchaseIndex === index}
-            isLoading={loading}
-          />
-        ))}
+        {(subscriptions.length ? subscriptions : itemSubs).map(
+          (item: any, index: number) => (
+            <PurchaseButton
+              key={index}
+              subIndex={index}
+              handlePurchaseTypeButton={handlePurchaseTypeButton}
+              item={item}
+              isSelected={selectedPurchaseIndex === index}
+              isLoading={loading}
+            />
+          ),
+        )}
       </View>
       <CommonButton
         text="Continue"

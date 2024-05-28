@@ -13,6 +13,9 @@ export default StyleSheet.create({
   seperator: {
     height: theme.spacing(15),
   },
+  seperatorIsNotSub: {
+    height: theme.spacing(15) + 120,
+  },
   categoryChip: {
     alignItems: 'center',
     justifyContent: 'center',

@@ -44,26 +44,42 @@ const PurchaseButton: FunctionComponent<Props> = ({
 
   const showPerWeekPrice = (productId: string) => {
     if (productId === 'com.aichat.yearly') {
-      return;
+      return item?.price
+        ? (item.price / 52).toFixed(2) + ' ' + item.currency
+        : '';
     }
     if (productId === 'com.yeto.yearly') {
-      const {priceAmountMicros, priceCurrencyCode} =
-        item?.subscriptionOfferDetails?.[0]?.pricingPhases?.pricingPhaseList[0];
-      const normalPrice = priceAmountMicros / 1000000;
+      const priceAmountMicros =
+        item?.subscriptionOfferDetails?.[0]?.pricingPhases
+          ?.pricingPhaseList?.[0]?.priceAmountMicros;
+      const priceCurrencyCode =
+        item?.subscriptionOfferDetails?.[0]?.pricingPhases
+          ?.pricingPhaseList?.[0]?.priceCurrencyCode;
+      const normalPrice = priceAmountMicros ? priceAmountMicros / 1000000 : 0;
 
-      return (normalPrice / 52).toFixed(2) + ' ' + priceCurrencyCode;
+      return priceAmountMicros
+        ? (normalPrice / 52).toFixed(2) + ' ' + priceCurrencyCode
+        : '';
     }
     if (productId === 'com.aichat.monthly') {
-      return;
+      return item?.price
+        ? (item.price / 12).toFixed(2) + ' ' + item.currency
+        : '';
     }
     if (productId === 'com.yeto.monthly') {
-      const {priceAmountMicros, priceCurrencyCode} =
-        item?.subscriptionOfferDetails?.[0]?.pricingPhases?.pricingPhaseList[0];
-      const normalPrice = priceAmountMicros / 1000000;
+      const priceAmountMicros =
+        item?.subscriptionOfferDetails?.[0]?.pricingPhases
+          ?.pricingPhaseList?.[0]?.priceAmountMicros;
+      const priceCurrencyCode =
+        item?.subscriptionOfferDetails?.[0]?.pricingPhases
+          ?.pricingPhaseList?.[0]?.priceCurrencyCode;
+      const normalPrice = priceAmountMicros ? priceAmountMicros / 1000000 : 0;
 
-      return (normalPrice / 12).toFixed(2) + ' ' + priceCurrencyCode;
+      return priceAmountMicros
+        ? (normalPrice / 12).toFixed(2) + ' ' + priceCurrencyCode
+        : '';
     }
-    return item.localizedPrice;
+    return item?.localizedPrice || '';
   };
 
   const renderButtonContent = () => (
@@ -83,7 +99,7 @@ const PurchaseButton: FunctionComponent<Props> = ({
             {Platform.OS === 'android'
               ? item?.subscriptionOfferDetails?.[0]?.pricingPhases
                   ?.pricingPhaseList?.[0]?.formattedPrice
-              : item.localizedPrice}
+              : item?.localizedPrice || ''}
           </Text>
           <Text
             style={
@@ -91,17 +107,19 @@ const PurchaseButton: FunctionComponent<Props> = ({
                 ? style.purchaseButtonDurationTextAndroid
                 : style.purchaseButtonDurationText
             }>
-            {getSubText(item.productId)}
+            {getSubText(item?.productId || '')}
           </Text>
         </View>
         <View>
-          <Text style={style.infoText}>Billed {getInfo(item.productId)}</Text>
+          <Text style={style.infoText}>
+            Billed {getInfo(item?.productId || '')}
+          </Text>
         </View>
       </View>
       <View style={style.rightContainer}>
         <View style={style.perWeekTextContainer}>
           <Text style={style.perWeekText}>
-            {showPerWeekPrice(item.productId)}
+            {showPerWeekPrice(item?.productId || '')}
           </Text>
           <Text style={style.perWeekText}>per week</Text>
         </View>
