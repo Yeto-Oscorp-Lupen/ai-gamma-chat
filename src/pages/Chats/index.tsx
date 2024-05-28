@@ -26,7 +26,7 @@ const ChatsPage = ({navigation}: any) => {
 
   const init = async () => {
     setTimeout(() => {
-      if (isSubs === false || !isSubs) {
+      if (isSubs === false) {
         navigation.navigate('PurchasePage');
       }
     }, 2000);
@@ -50,7 +50,7 @@ const ChatsPage = ({navigation}: any) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContainer}>
-        {(isSubs === false || !isSubs) && (
+        {isSubs === false && (
           <GammaButton
             navigation={navigation}
             animatedValue={commonAnimatedValue}

@@ -82,7 +82,7 @@ export default StyleSheet.create({
   },
   msgText: {
     fontFamily: theme.font.semiBold,
-    fontSize: theme.spacing(1.6),
+    fontSize: theme.spacing(2.2),
     color: theme.colors.main.white,
     letterSpacing: 0.2,
   },

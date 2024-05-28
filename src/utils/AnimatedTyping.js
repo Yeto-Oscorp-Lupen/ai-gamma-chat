@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import {useRef, useState, useEffect} from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {theme} from '../constants/theme';
@@ -92,7 +91,7 @@ export default function AnimatedTyping(props) {
       selectionColor={'yellow'}
       style={[styles.text, props.style]}>
       {text}
-      <Text style={{color: cursorColor, fontSize: 14}}>|</Text>
+      <Text style={{color: cursorColor, fontSize: theme.spacing(2.2)}}>|</Text>
     </Text>
   );
 }
@@ -100,7 +99,7 @@ export default function AnimatedTyping(props) {
 let styles = StyleSheet.create({
   text: {
     fontFamily: theme.font.semiBold,
-    fontSize: theme.spacing(1.6),
+    fontSize: theme.spacing(2.2),
     color: '#ffffff',
     letterSpacing: 0.2,
     alignSelf: 'stretch',

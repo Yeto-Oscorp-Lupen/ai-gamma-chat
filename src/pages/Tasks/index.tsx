@@ -76,7 +76,7 @@ const TasksPage = ({navigation}: any) => {
   return (
     <>
       <View style={styles.safeAreaContainer}>
-        {(isSubs === false || !isSubs) && (
+        {isSubs === false && (
           <GammaButton
             navigation={navigation}
             animatedValue={actionAnimatedValue}
