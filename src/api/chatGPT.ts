@@ -4,7 +4,6 @@ import axios from './index';
 export const askToChatGpt = (messages: any) => {
   const url =
     Platform.OS === 'ios' ? '/gpt/chat/search/4o' : '/gpt/chat/search';
-  console.log('url', url);
   return axios({
     method: 'POST',
     url,
