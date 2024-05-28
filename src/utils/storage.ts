@@ -24,13 +24,13 @@ export const getFreeRightsFromStorage = async () => {
       freeRights !== null
         ? parseInt(freeRights as any, 10)
         : Platform.OS === 'ios'
-        ? 2
+        ? 0
         : 10;
 
     return parsedRights !== null
       ? parsedRights
       : Platform.OS === 'ios'
-      ? 2
+      ? 0
       : 10;
   } catch (e) {
     console.warn(e);

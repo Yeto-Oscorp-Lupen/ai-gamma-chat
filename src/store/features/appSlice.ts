@@ -4,7 +4,7 @@ import {Platform} from 'react-native';
 const initialState = {
   isSubs: undefined,
   collection: [],
-  freeRights: Platform.OS === 'ios' ? 2 : 10,
+  freeRights: Platform.OS === 'ios' ? 0 : 10,
 };
 
 export const appSlice = createSlice({

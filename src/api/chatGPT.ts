@@ -1,25 +1,13 @@
+import {Platform} from 'react-native';
 import axios from './index';
 
 export const askToChatGpt = (messages: any) => {
-  console.log('messages ->', messages);
+  const url =
+    Platform.OS === 'ios' ? '/gpt/chat/search/4o' : '/gpt/chat/search';
+  console.log('url', url);
   return axios({
     method: 'POST',
-    url: '/gpt/chat/search',
+    url,
     data: {messages},
-  }).then((response: any) => response.data);
-};
-
-export const searchWebGpt = (prompt: string) => {
-  return axios({
-    method: 'POST',
-    url: '/gpt/web/search',
-    data: {prompt},
-  }).then((response: any) => response.data);
-};
-
-export const getTrends = () => {
-  return axios({
-    method: 'GET',
-    url: '/trend/create',
   }).then((response: any) => response.data);
 };
