@@ -7,9 +7,9 @@ import style from './style';
 export type Props = {
   navigation?: NavigationProp<any, any>;
   item: any;
-  isSelected: any;
+  isSelected: boolean;
   subIndex: number;
-  handlePurchaseTypeButton: any;
+  handlePurchaseTypeButton: (index: number) => void;
   isLoading?: boolean;
 };
 
@@ -19,125 +19,107 @@ const PurchaseButton: FunctionComponent<Props> = ({
   subIndex,
   handlePurchaseTypeButton,
   isLoading,
-}: any) => {
-  const getSubText = (productId: string): string => {
-    if (
-      productId === 'com.aichat.monthly' ||
-      productId === 'com.yeto.monthly'
-    ) {
-      return 'Monthly';
-    }
-    if (productId === 'com.aichat.yearly' || productId === 'com.yeto.yearly') {
-      return 'Annual';
-    }
-    if (
-      productId === 'com.aichat.lifetime' ||
-      productId === 'com.yeto.lifetime'
-    ) {
-      return 'Lifetime';
-    }
+}) => {
+  const SUB_TEXTS: {[key: string]: string} = {
+    'com.aichat.monthly': 'Monthly',
+    'com.yeto.monthly': 'Monthly',
+    'com.aichat.yearly': 'Annual',
+    'com.yeto.yearly': 'Annual',
+  };
 
-    return 'Weekly';
+  const INFO_TEXTS: {[key: string]: string} = {
+    'com.aichat.monthly': 'Monthly',
+    'com.yeto.monthly': 'Monthly',
+    'com.aichat.yearly': 'Annually',
+    'com.yeto.yearly': 'Annually',
+  };
+
+  const getSubText = (productId: string): string => {
+    return SUB_TEXTS[productId] || 'Weekly';
   };
 
   const getInfo = (productId: string): string => {
-    if (
-      productId === 'com.aichat.monthly' ||
-      productId === 'com.yeto.monthly'
-    ) {
-      return 'Monthly';
-    }
-    if (productId === 'com.aichat.yearly' || productId === 'com.yeto.yearly') {
-      return 'Annually';
-    }
-
-    return 'Weekly';
+    return INFO_TEXTS[productId] || 'Weekly';
   };
 
-  if (Platform.OS === 'android') {
-    return (
-      <SkeletonPressableAndroid
-        onPress={() => handlePurchaseTypeButton(subIndex)}
-        isLoading={isLoading}>
-        <View
-          style={[
-            style.purchaseButton,
-            isSelected && style.purchaseSelectedButton,
-          ]}>
-          <View style={style.leftContainer}>
-            <View style={style.priceView}>
-              <Text style={style.purchaseButtonPriceText}>
-                {
-                  item?.subscriptionOfferDetails?.[0]?.pricingPhases
-                    ?.pricingPhaseList?.[0]?.formattedPrice
-                }
-              </Text>
-              <Text style={style.purchaseButtonDurationText}>
-                {getSubText(item.productId)}
-              </Text>
-            </View>
-            <View>
-              <Text style={style.infoText}>
-                Billed {getInfo(item.productId)}
-              </Text>
-            </View>
-          </View>
-          <View style={style.rightContainer}>
-            {/* {isSelected && (
-            <Image
-              style={style.iconCheck}
-              source={require('../../assets/purchase/check.png')}
-            />
-          )} */}
-            {(item.productId === 'com.aichat.yearly' ||
-              item.productId === 'com.yeto.yearly') && (
-              <View style={style.popularTextContainer}>
-                <Text style={style.popularText}>Best Offer</Text>
-              </View>
-            )}
-          </View>
-        </View>
-      </SkeletonPressableAndroid>
-    );
-  }
+  const showPerWeekPrice = (productId: string) => {
+    if (productId === 'com.aichat.yearly') {
+      return;
+    }
+    if (productId === 'com.yeto.yearly') {
+      const {priceAmountMicros, priceCurrencyCode} =
+        item?.subscriptionOfferDetails?.[0]?.pricingPhases?.pricingPhaseList[0];
+      const normalPrice = priceAmountMicros / 1000000;
 
-  return (
+      return (normalPrice / 52).toFixed(2) + ' ' + priceCurrencyCode;
+    }
+    if (productId === 'com.aichat.monthly') {
+      return;
+    }
+    if (productId === 'com.yeto.monthly') {
+      const {priceAmountMicros, priceCurrencyCode} =
+        item?.subscriptionOfferDetails?.[0]?.pricingPhases?.pricingPhaseList[0];
+      const normalPrice = priceAmountMicros / 1000000;
+
+      return (normalPrice / 12).toFixed(2) + ' ' + priceCurrencyCode;
+    }
+    return item.localizedPrice;
+  };
+
+  const renderButtonContent = () => (
+    <View
+      style={[
+        style.purchaseButton,
+        isSelected && style.purchaseSelectedButton,
+      ]}>
+      <View style={style.leftContainer}>
+        <View style={style.priceView}>
+          <Text
+            style={
+              Platform.OS === 'android'
+                ? style.purchaseButtonPriceTextAndroid
+                : style.purchaseButtonPriceText
+            }>
+            {Platform.OS === 'android'
+              ? item?.subscriptionOfferDetails?.[0]?.pricingPhases
+                  ?.pricingPhaseList?.[0]?.formattedPrice
+              : item.localizedPrice}
+          </Text>
+          <Text
+            style={
+              Platform.OS === 'android'
+                ? style.purchaseButtonDurationTextAndroid
+                : style.purchaseButtonDurationText
+            }>
+            {getSubText(item.productId)}
+          </Text>
+        </View>
+        <View>
+          <Text style={style.infoText}>Billed {getInfo(item.productId)}</Text>
+        </View>
+      </View>
+      <View style={style.rightContainer}>
+        <View style={style.perWeekTextContainer}>
+          <Text style={style.perWeekText}>
+            {showPerWeekPrice(item.productId)}
+          </Text>
+          <Text style={style.perWeekText}>per week</Text>
+        </View>
+      </View>
+    </View>
+  );
+
+  return Platform.OS === 'android' ? (
+    <SkeletonPressableAndroid
+      onPress={() => handlePurchaseTypeButton(subIndex)}
+      isLoading={isLoading}>
+      {renderButtonContent()}
+    </SkeletonPressableAndroid>
+  ) : (
     <SkeletonPressable
       onPress={() => handlePurchaseTypeButton(subIndex)}
       isLoading={isLoading}>
-      <View
-        style={[
-          style.purchaseButton,
-          isSelected && style.purchaseSelectedButton,
-        ]}>
-        <View style={style.leftContainer}>
-          <View style={style.priceView}>
-            <Text style={style.purchaseButtonPriceText}>
-              {item.localizedPrice}
-            </Text>
-            <Text style={style.purchaseButtonDurationText}>
-              {getSubText(item.productId)}
-            </Text>
-          </View>
-          <View>
-            <Text style={style.infoText}>Billed {getInfo(item.productId)}</Text>
-          </View>
-        </View>
-        <View style={style.rightContainer}>
-          {/* {isSelected && (
-            <Image
-              style={style.iconCheck}
-              source={require('../../assets/purchase/check.png')}
-            />
-          )} */}
-          {(item.productId === 'com.aichat.yearly' ||
-            item.productId === 'com.yeto.yearly') && (
-            <View style={style.popularTextContainer}>
-              <Text style={style.popularText}>Best Offer</Text>
-            </View>
-          )}
-        </View>
-      </View>
+      {renderButtonContent()}
     </SkeletonPressable>
   );
 };

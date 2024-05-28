@@ -96,13 +96,13 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
 
   const handleTermsOfUseButton = () => {
     Linking.openURL(
-      'https://doc-hosting.flycricket.io/deepart-terms-of-usage/2c25af74-7d36-4e22-ae87-b5d1c6bd13b9/terms',
+      'https://doc-hosting.flycricket.io/ai-chat-terms-of-use/ba024ce6-157b-4695-a524-11b21f7f382e/terms',
     );
   };
 
   const handlePrivacyPolicyButton = () => {
     Linking.openURL(
-      'https://doc-hosting.flycricket.io/deepart-privacy-policy/f6d8c904-b28a-4ae1-9b91-b53dc8451e5e/privacy',
+      'https://doc-hosting.flycricket.io/ai-chat-privacy-policy/816e085f-19fa-47be-ad04-5e463d4c4730/privacy',
     );
   };
 

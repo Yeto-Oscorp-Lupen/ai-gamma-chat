@@ -10,8 +10,11 @@ import {useFocusEffect} from '@react-navigation/native';
 import {animateHide, animateVisible, vibrate} from '../../utils';
 import StickyImageMessage from '../../components/StickyImageMessage';
 import AnimatedPressable from '../../components/AnimatedPressable';
+import {useSelector} from 'react-redux';
+import GammaButton from './components/GammaButton';
 
 const TasksPage = ({navigation}: any) => {
+  const {isSubs} = useSelector((state: any) => state.app);
   const actionAnimatedValue = useRef(new Animated.Value(0)).current;
   const taskAnimatedValues = useRef(
     TASKS_ITEMS.map(() => new Animated.Value(0)),
@@ -73,6 +76,12 @@ const TasksPage = ({navigation}: any) => {
   return (
     <>
       <View style={styles.safeAreaContainer}>
+        {(isSubs === false || !isSubs) && (
+          <GammaButton
+            navigation={navigation}
+            animatedValue={actionAnimatedValue}
+          />
+        )}
         <AnimatedView
           animatedValue={actionAnimatedValue}
           style={{paddingBottom: 80}}>

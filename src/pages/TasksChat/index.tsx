@@ -43,10 +43,10 @@ const TasksChatPage = ({route, navigation}: any) => {
 
   const handleSubmit = useCallback(async () => {
     vibrate();
-    // if (!isSubs) {
-    //   navigation.navigate('Purchase');
-    //   return false;
-    // }
+    if (!isSubs && (!freeRights || freeRights <= 0)) {
+      navigation.navigate('PurchasePage');
+      return false;
+    }
 
     if (question?.length) {
       setTimeout(() => scrollRef?.current?.scrollToEnd({animated: true}), 200);
@@ -80,8 +80,8 @@ const TasksChatPage = ({route, navigation}: any) => {
   }, [question, conversation]);
 
   const refresh = async () => {
-    if (!isSubs && !freeRights) {
-      navigation.navigate('Purchase');
+    if (!isSubs && (!freeRights || freeRights <= 0)) {
+      navigation.navigate('PurchasePage');
       return false;
     }
     setQuestion('');

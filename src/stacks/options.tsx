@@ -91,7 +91,7 @@ export const PurchasePagesOptions = ({
         vibrate();
         navigation.goBack();
       }}>
-      <CrossFill style={styles.backButtonIcon} width={18} height={18} />
+      <CrossFill style={styles.backButtonIcon} width={16} height={16} />
     </Pressable>
   ),
 });
@@ -127,7 +127,7 @@ export const ChatGptPagesOptions = ({
         vibrate();
         navigation.goBack();
       }}>
-      <CrossFill style={styles.backButtonIcon} width={18} height={18} />
+      <CrossFill style={styles.backButtonIcon} width={16} height={16} />
     </Pressable>
   ),
   headerRight: () => (

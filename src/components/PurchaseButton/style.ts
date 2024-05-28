@@ -42,6 +42,19 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  perWeekTextContainer: {
+    position: 'absolute',
+    bottom: 25,
+    left: 2,
+    width: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  perWeekText: {
+    fontSize: 12,
+    color: 'white',
+    fontFamily: theme.font.semiBold,
+  },
   leftContainer: {flex: 0.8},
   rightContainer: {
     flex: 0.2,
@@ -60,8 +73,20 @@ export default StyleSheet.create({
     fontFamily: theme.font.regular,
     marginLeft: 8,
   },
+  purchaseButtonDurationTextAndroid: {
+    fontSize: 16,
+    color: theme.colors.main.white,
+    fontFamily: theme.font.regular,
+    marginLeft: 8,
+  },
   purchaseButtonPriceText: {
     fontSize: 25,
+    marginLeft: 16,
+    color: theme.colors.main.white,
+    fontFamily: theme.font.bold,
+  },
+  purchaseButtonPriceTextAndroid: {
+    fontSize: 20,
     marginLeft: 16,
     color: theme.colors.main.white,
     fontFamily: theme.font.bold,

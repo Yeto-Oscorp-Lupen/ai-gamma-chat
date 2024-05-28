@@ -17,6 +17,7 @@ import {vibrate} from '../../utils';
 import AnimatedTyping from '../../utils/AnimatedTyping';
 import styles from './styles';
 import {Refresh} from '../../components/Icons';
+import {setFreeRightsToStorage} from '../../utils/storage';
 
 const ChatsChatPage = ({route, navigation}: any) => {
   const dispatch = useDispatch();
@@ -36,15 +37,15 @@ const ChatsChatPage = ({route, navigation}: any) => {
 
   const setNewRightCount = async () => {
     dispatch(setFreeRight(freeRights - 1));
-    // setFreeRightsFromStorage(freeRights - 1);
+    setFreeRightsToStorage(freeRights - 1);
   };
 
   const handleSubmit = useCallback(async () => {
     vibrate();
-    // if (!isSubs) {
-    //   navigation.navigate('Purchase');
-    //   return false;
-    // }
+    if (!isSubs && (!freeRights || freeRights <= 0)) {
+      navigation.navigate('PurchasePage');
+      return false;
+    }
 
     if (question?.length) {
       setTimeout(() => scrollRef?.current?.scrollToEnd({animated: true}), 200);
@@ -67,8 +68,8 @@ const ChatsChatPage = ({route, navigation}: any) => {
   }, [question, conversation]);
 
   const refresh = async () => {
-    if (!isSubs && !freeRights) {
-      navigation.navigate('Purchase');
+    if (!isSubs && (!freeRights || freeRights <= 0)) {
+      navigation.navigate('PurchasePage');
       return false;
     }
     setQuestion('');
