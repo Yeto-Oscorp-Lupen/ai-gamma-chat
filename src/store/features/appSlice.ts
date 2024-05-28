@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
   isSubs: undefined,
   collection: [],
-  freeRights: 3,
+  freeRights: 10,
 };
 
 export const appSlice = createSlice({

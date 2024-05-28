@@ -20,9 +20,9 @@ export const getFreeRightsFromStorage = async () => {
   try {
     const freeRights = await AsyncStorage.getItem('@freeRights');
     const parsedRights =
-      freeRights !== null ? parseInt(freeRights as any, 10) : 3;
+      freeRights !== null ? parseInt(freeRights as any, 10) : 10;
 
-    return parsedRights !== null ? parsedRights : 3;
+    return parsedRights !== null ? parsedRights : 10;
   } catch (e) {
     console.warn(e);
   }
