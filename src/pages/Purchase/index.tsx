@@ -22,6 +22,7 @@ import {setIsSubs} from '../../store/features/appSlice';
 import {getPurchases} from '../../utils';
 import styles from './styles';
 import {ArrowRight} from '../../components/Icons';
+import {IS_IPHONE_MINI} from '../../constants';
 
 const PurchasePage: FunctionComponent = ({navigation}: any) => {
   const dispatch = useDispatch();
@@ -30,9 +31,15 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
   const [subscriptions, setSubscriptions] = useState<any>([]);
   const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(0);
   const itemSubs = Platform.select({
-    ios: ['com.aichat.monthly', 'com.aichat.yearly'],
-    android: ['com.yeto.monthly', 'com.yeto.yearly'],
+    ios: ['com.aichat.monthly', 'com.aichat.weekly', 'com.aichat.yearly'],
+    android: ['com.yeto.monthly', 'com.yeto.weekly', 'com.yeto.yearly'],
   } as any);
+
+  const order = {
+    yearly: 1,
+    monthly: 2,
+    weekly: 3,
+  };
 
   useEffect(() => {
     const bootstrapAsync = async () => {
@@ -45,10 +52,11 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
                 skus: itemSubs as string[],
               });
               subs.sort((a: any, b: any) => {
-                return (
-                  (itemSubs as string[]).indexOf(b.productId) -
-                  (itemSubs as string[]).indexOf(a.productId)
-                );
+                const aOrder =
+                  order[a.productId.split('.').pop() as keyof typeof order];
+                const bOrder =
+                  order[b.productId.split('.').pop() as keyof typeof order];
+                return aOrder - bOrder;
               });
 
               setSubscriptions(subs);
@@ -112,7 +120,11 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
 
   return (
     <ImageBackground
-      source={require('../../assets/purchase/purchase-info.png')}
+      source={
+        IS_IPHONE_MINI()
+          ? require('../../assets/purchase/purchase-info-mini.png')
+          : require('../../assets/purchase/purchase-info.png')
+      }
       style={styles.mainBackground}>
       <View style={styles.imagesContainer}>
         {(subscriptions.length ? subscriptions : itemSubs).map(

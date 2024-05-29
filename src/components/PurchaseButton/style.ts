@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
 import {theme} from '../../constants/theme';
 
-export const PURCHASE_BUTTON_WIDTH = 310;
-export const PURCHASE_BUTTON_HEIGHT = 80;
+export const PURCHASE_BUTTON_WIDTH = 330;
+export const PURCHASE_BUTTON_HEIGHT = 65;
 export const PURCHASE_BUTTON_BORDER_RADIUS = 10;
 export const PURCHASE_BUTTON_BACKGROUND_COLOR = 'rgba(182,182,182,0.1)';
 export const PURCHASE_BUTTON_MARGIN_TOP = 10;

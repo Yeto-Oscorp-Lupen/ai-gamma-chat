@@ -25,11 +25,15 @@ const PurchaseButton: FunctionComponent<Props> = ({
     'com.yeto.monthly': 'Monthly',
     'com.aichat.yearly': 'Annual',
     'com.yeto.yearly': 'Annual',
+    'com.yeto.weekly': 'Weekly',
+    'com.aichat.weekly': 'Weekly',
   };
 
   const INFO_TEXTS: {[key: string]: string} = {
     'com.aichat.monthly': 'Monthly',
     'com.yeto.monthly': 'Monthly',
+    'com.yeto.weekly': 'Weekly',
+    'com.aichat.weekly': 'Weekly',
     'com.aichat.yearly': 'Annually',
     'com.yeto.yearly': 'Annually',
   };
@@ -79,7 +83,7 @@ const PurchaseButton: FunctionComponent<Props> = ({
         ? (normalPrice / 12).toFixed(2) + ' ' + priceCurrencyCode
         : '';
     }
-    return item?.localizedPrice || '';
+    return '';
   };
 
   const renderButtonContent = () => (
@@ -121,7 +125,12 @@ const PurchaseButton: FunctionComponent<Props> = ({
           <Text style={style.perWeekText}>
             {showPerWeekPrice(item?.productId || '')}
           </Text>
-          <Text style={style.perWeekText}>per week</Text>
+          <Text style={style.perWeekText}>
+            {item?.productId === 'com.yeto.weekly' ||
+            item?.productId === 'com.aichat.weekly'
+              ? ''
+              : 'per week'}
+          </Text>
         </View>
       </View>
     </View>

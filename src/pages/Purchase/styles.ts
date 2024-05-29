@@ -12,12 +12,14 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
-  imagesContainer: {},
+  imagesContainer: {
+    paddingTop: 20,
+  },
 
   //FOOTER
   footer: {
     position: 'absolute',
-    bottom: IS_IPHONE_MINI() ? 75 : 20,
+    bottom: IS_IPHONE_MINI() ? 10 : 20,
     marginTop: 10,
     alignSelf: 'center',
   },
