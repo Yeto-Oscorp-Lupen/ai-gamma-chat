@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface aiGammaChatTests : XCTestCase
+@interface gammaaiTests : XCTestCase
 
 @end
 
-@implementation aiGammaChatTests
+@implementation gammaaiTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
