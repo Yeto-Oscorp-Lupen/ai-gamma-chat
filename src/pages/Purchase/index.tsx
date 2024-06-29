@@ -58,6 +58,7 @@ const PurchasePage: FunctionComponent = ({navigation}: any) => {
                   order[b.productId.split('.').pop() as keyof typeof order];
                 return aOrder - bOrder;
               });
+              console.log(subs);
 
               setSubscriptions(subs);
               setLoading(false);

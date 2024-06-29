@@ -15,11 +15,11 @@ const SettingsPage = () => {
         </View>
       )}
       <View style={style.content}>
-        <SettingButton
+        {/* <SettingButton
           index={0}
           text={'Contact Us'}
           onPress={() => Linking.openURL('mailto:hi@ritmo-ai.com')}
-        />
+        /> */}
         <SettingButton
           index={1}
           text={'Rate Us'}

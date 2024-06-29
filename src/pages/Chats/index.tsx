@@ -11,6 +11,7 @@ import {AnimatedValueType} from '../../types';
 import {useDispatch, useSelector} from 'react-redux';
 import {getFreeRightsFromStorage} from '../../utils/storage';
 import {setFreeRight} from '../../store/features/appSlice';
+import * as StoreReview from 'react-native-store-review';
 
 const ChatsPage = ({navigation}: any) => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const ChatsPage = ({navigation}: any) => {
   }, [isSubs]);
 
   const init = async () => {
+    StoreReview.requestReview();
     setTimeout(() => {
       if (isSubs === false) {
         navigation.navigate('PurchasePage');

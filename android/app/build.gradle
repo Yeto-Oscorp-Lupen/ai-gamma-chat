@@ -74,12 +74,12 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.aigammachat"
+    namespace "com.gammaai"
     defaultConfig {
-        applicationId "com.aigammachat"
+        applicationId "com.gammaai"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 8
+        versionCode 1
         versionName "1.0"
         missingDimensionStrategy "store", "play"
     }
