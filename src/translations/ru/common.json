@@ -1,4 +1,19 @@
 {
   "TRY_GAMMA_AI_PREMIUM": "Попробуйте Gamma AI Premium",
-  "TAP_TO_CLAIM_YOUR_OFFER_NOW": "Нажмите, чтобы воспользоваться вашим предложением сейчас!"
+  "TAP_TO_CLAIM_YOUR_OFFER_NOW": "Нажмите, чтобы получить предложение сейчас!",
+  "GET_HELP_BOX": {
+    "GET_HELP_WITH_ANY_TASK": "Получите помощь в любой задаче",
+    "IMAGE_GENERATION": "Создание изображений",
+    "TURN_WORDS_INTO_IMAGE": "Превратите слова в изображение",
+    "SOCIAL": "Социальное",
+    "CREATE_AN_ENGAGING_POST": "Создайте увлекательный пост",
+    "WRITING": "Письмо",
+    "CRAFT_AN_ESSAY": "Напишите эссе",
+    "PROMOTION": "Продвижение",
+    "DRAFT_AN_EMAIL": "Напишите электронное письмо",
+    "STUDYING": "Учеба",
+    "EXPLAIN_A_THEOREM_TO_ME": "Объясните мне теорему",
+    "HEALTH": "Здоровье",
+    "CREATE_A_TRAINING_AND_MEAL_PLAN": "Создайте план тренировок и питания"
+  }
 }

@@ -1,4 +1,19 @@
 {
   "TRY_GAMMA_AI_PREMIUM": "Experimente o Gamma AI Premium",
-  "TAP_TO_CLAIM_YOUR_OFFER_NOW": "Toque para reivindicar sua oferta agora!"
+  "TAP_TO_CLAIM_YOUR_OFFER_NOW": "Toque para reivindicar sua oferta agora!",
+  "GET_HELP_BOX": {
+    "GET_HELP_WITH_ANY_TASK": "Obtenha ajuda com qualquer tarefa",
+    "IMAGE_GENERATION": "Geração de Imagem",
+    "TURN_WORDS_INTO_IMAGE": "Transforme palavras em imagem",
+    "SOCIAL": "Social",
+    "CREATE_AN_ENGAGING_POST": "Crie uma postagem envolvente",
+    "WRITING": "Escrita",
+    "CRAFT_AN_ESSAY": "Escreva um ensaio",
+    "PROMOTION": "Promoção",
+    "DRAFT_AN_EMAIL": "Rascunhe um e-mail",
+    "STUDYING": "Estudo",
+    "EXPLAIN_A_THEOREM_TO_ME": "Explique um teorema para mim",
+    "HEALTH": "Saúde",
+    "CREATE_A_TRAINING_AND_MEAL_PLAN": "Crie um plano de treinamento e refeições"
+  }
 }

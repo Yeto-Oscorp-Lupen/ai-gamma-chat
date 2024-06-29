@@ -1,10 +1,10 @@
 import {Image, Text, View} from 'react-native';
-import {useTranslation} from 'react-i18next';
 import AnimatedPressable from '../../../../components/AnimatedPressable';
 import {ArrowRightSafe} from '../../../../components/Icons';
-import styles from './styles';
 import AnimatedView from '../../../../components/AnimatedView';
 import {AnimatedValueType} from '../../../../types';
+import useTranslation from '../../../../hooks/useTranslation';
+import styles from './styles';
 
 type GammaButtonPropsType = {
   animatedValue: AnimatedValueType;
