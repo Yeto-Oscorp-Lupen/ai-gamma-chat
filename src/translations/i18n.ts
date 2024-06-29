@@ -14,7 +14,7 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'en',
   compatibilityJSON: 'v3',
   resources: {
-    tr: {
+    en: {
       common: common_en,
     },
     de: {

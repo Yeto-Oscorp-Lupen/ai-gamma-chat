@@ -1,4 +1,19 @@
 {
   "TRY_GAMMA_AI_PREMIUM": "Try Gamma AI Premium",
-  "TAP_TO_CLAIM_YOUR_OFFER_NOW": "Tap to claim your offer now!"
+  "TAP_TO_CLAIM_YOUR_OFFER_NOW": "Tap to claim your offer now!",
+  "GET_HELP_BOX": {
+    "GET_HELP_WITH_ANY_TASK": "Get Help with Any Task",
+    "IMAGE_GENERATION": "Image Generation",
+    "TURN_WORDS_INTO_IMAGE": "Turn words into image",
+    "SOCIAL": "Social",
+    "CREATE_AN_ENGAGING_POST": "Create an engaging post",
+    "WRITING": "Writing",
+    "CRAFT_AN_ESSAY": "Craft an essay",
+    "PROMOTION": "Promotion",
+    "DRAFT_AN_EMAIL": "Draft an email",
+    "STUDYING": "Studying",
+    "EXPLAIN_A_THEOREM_TO_ME": "Explain a theorem to me",
+    "HEALTH": "Health",
+    "CREATE_A_TRAINING_AND_MEAL_PLAN": "Create a training and meal plan"
+  }
 }

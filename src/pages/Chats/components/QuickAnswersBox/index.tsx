@@ -82,7 +82,7 @@ const QuickAnswersBox = ({
 }: QuickAnswersBoxPropsType) => (
   <View style={styles.container}>
     <AnimatedView animatedValue={animatedValue}>
-      <Text style={styles.title}>Get Help with Any Task</Text>
+      <Text style={styles.title}>Receive quick answers</Text>
     </AnimatedView>
     <View style={styles.hintsContainer}>
       {HINTS.map((hint: HintType, i: number) => (

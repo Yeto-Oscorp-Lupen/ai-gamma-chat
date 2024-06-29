@@ -10,6 +10,7 @@ import AnimatedPressable from '../../../../components/AnimatedPressable';
 import styles from './styles';
 import AnimatedView from '../../../../components/AnimatedView';
 import {AnimatedValueType} from '../../../../types';
+import useTranslation from '../../../../hooks/useTranslation';
 
 type HelpButton = {
   title: string;
@@ -123,31 +124,35 @@ const HelpButton = ({
   );
 };
 
-const GetHelpBox = ({animatedValue, navigation}: GetHelpBoxPropsType) => (
-  <View style={styles.container}>
-    <AnimatedView animatedValue={animatedValue}>
-      <Text style={styles.title}>Get Help with Any Task</Text>
-    </AnimatedView>
-    <ScrollView
-      horizontal
-      contentContainerStyle={styles.buttonsScrollViewContentContainerStyle}
-      showsHorizontalScrollIndicator={false}>
-      <View style={styles.buttonsContainer}>
-        {HELP_BUTTONS_INFO.map((helpButtonInfo: HelpButton, i: number) => (
-          <HelpButton
-            key={i}
-            item={helpButtonInfo}
-            navigation={navigation}
-            title={helpButtonInfo.title}
-            description={helpButtonInfo.description}
-            image={helpButtonInfo.image}
-            index={i}
-            animatedValue={animatedValue}
-          />
-        ))}
-      </View>
-    </ScrollView>
-  </View>
-);
+const GetHelpBox = ({animatedValue, navigation}: GetHelpBoxPropsType) => {
+  const {t} = useTranslation('common', 'GET_HELP_BOX');
+
+  return (
+    <View style={styles.container}>
+      <AnimatedView animatedValue={animatedValue}>
+        <Text style={styles.title}>{t('GET_HELP_WITH_ANY_TASK')}</Text>
+      </AnimatedView>
+      <ScrollView
+        horizontal
+        contentContainerStyle={styles.buttonsScrollViewContentContainerStyle}
+        showsHorizontalScrollIndicator={false}>
+        <View style={styles.buttonsContainer}>
+          {HELP_BUTTONS_INFO.map((helpButtonInfo: HelpButton, i: number) => (
+            <HelpButton
+              key={i}
+              item={helpButtonInfo}
+              navigation={navigation}
+              title={helpButtonInfo.title}
+              description={helpButtonInfo.description}
+              image={helpButtonInfo.image}
+              index={i}
+              animatedValue={animatedValue}
+            />
+          ))}
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
 
 export default GetHelpBox;
