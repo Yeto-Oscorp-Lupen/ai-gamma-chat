@@ -1,4 +1,5 @@
 import {Image, Text, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import AnimatedPressable from '../../../../components/AnimatedPressable';
 import {ArrowRightSafe} from '../../../../components/Icons';
 import styles from './styles';
@@ -10,25 +11,35 @@ type GammaButtonPropsType = {
   navigation: any;
 };
 
-const GammaButton = ({animatedValue, navigation}: GammaButtonPropsType) => (
-  <AnimatedView animatedValue={animatedValue}>
-    <AnimatedPressable
-      style={styles.gammaButton}
-      onPress={() => navigation.navigate('PurchasePage')}>
-      <Image
-        resizeMode="contain"
-        source={require('../../../../assets/chats/gamma.png')}
-        style={styles.gammaButtonImage}
-      />
-      <View style={styles.gammaButtonInfoContainer}>
-        <Text style={styles.gammaButtonTitle}>Try Gamma AI Premium</Text>
-        <Text style={styles.gammaButtonDescription}>
-          Tap to claim your offer now!
-        </Text>
-      </View>
-      <ArrowRightSafe width={20} height={20} style={styles.gammaButtonArrow} />
-    </AnimatedPressable>
-  </AnimatedView>
-);
+const GammaButton = ({animatedValue, navigation}: GammaButtonPropsType) => {
+  const {t} = useTranslation('common');
+
+  return (
+    <AnimatedView animatedValue={animatedValue}>
+      <AnimatedPressable
+        style={styles.gammaButton}
+        onPress={() => navigation.navigate('PurchasePage')}>
+        <Image
+          resizeMode="contain"
+          source={require('../../../../assets/chats/gamma.png')}
+          style={styles.gammaButtonImage}
+        />
+        <View style={styles.gammaButtonInfoContainer}>
+          <Text style={styles.gammaButtonTitle}>
+            {t('TRY_GAMMA_AI_PREMIUM')}
+          </Text>
+          <Text style={styles.gammaButtonDescription}>
+            {t('TAP_TO_CLAIM_YOUR_OFFER_NOW')}
+          </Text>
+        </View>
+        <ArrowRightSafe
+          width={20}
+          height={20}
+          style={styles.gammaButtonArrow}
+        />
+      </AnimatedPressable>
+    </AnimatedView>
+  );
+};
 
 export default GammaButton;
