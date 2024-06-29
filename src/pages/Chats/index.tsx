@@ -21,18 +21,25 @@ const ChatsPage = ({navigation}: any) => {
   ).current;
 
   useEffect(() => {
-    init();
-    checkUserHasFreeQuestions();
+    if (isSubs !== null) {
+      setTimeout(() => {
+        init();
+      }, 100);
+
+      StoreReview.requestReview();
+    }
   }, [isSubs]);
 
+  useEffect(() => {
+    checkUserHasFreeQuestions();
+  }, []);
+
   const init = async () => {
-    StoreReview.requestReview();
-    setTimeout(() => {
-      if (isSubs === false) {
-        navigation.navigate('PurchasePage');
-      }
-    }, 2000);
+    if (isSubs === false) {
+      navigation.navigate('PurchasePage');
+    }
   };
+
   const checkUserHasFreeQuestions = async () => {
     let freeRightsCount = await getFreeRightsFromStorage();
     console.warn(freeRightsCount);

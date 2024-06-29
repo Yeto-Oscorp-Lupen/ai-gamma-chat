@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import {Platform} from 'react-native';
 
 const initialState = {
-  isSubs: undefined,
+  isSubs: null,
   collection: [],
   freeRights: Platform.OS === 'ios' ? 0 : 10,
 };

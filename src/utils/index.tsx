@@ -8,6 +8,7 @@ export const getPurchases = async (isInStartPage = false) => {
   try {
     await initConnection();
     const purchases = await getAvailablePurchases();
+    console.log('purchases', purchases);
     if (purchases.length > 0) {
       if (!isInStartPage) {
         successfulAlert('Your purchases were updated.');

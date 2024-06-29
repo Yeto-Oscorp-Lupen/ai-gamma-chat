@@ -18,6 +18,7 @@ const App = () => {
 
   const init = async () => {
     const sub = await getPurchases(true);
+    console.log(sub);
     dispatch(setIsSubs(sub));
     SplashScreen.hide();
   };
