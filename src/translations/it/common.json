@@ -176,5 +176,11 @@
       "QUERY_JOB_ADS": "Crea un annuncio di lavoro. La posizione è \"{text}\". Non scrivere spiegazioni nelle risposte.",
       "FIRST_MESSAGE_JOB_ADS": "Per quale posizione stai assumendo?"
     }
+  },
+  "SETTINGS_PAGE": {
+    "RATE_US": "Valutaci",
+    "TERMS_OF_USE": "Termini di utilizzo",
+    "PRIVACY_POLICY": "Informativa sulla privacy",
+    "LIMITLESS_MEMBERSHIP": "Abbonamento illimitato"
   }
 }

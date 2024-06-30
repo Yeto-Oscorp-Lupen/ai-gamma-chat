@@ -176,5 +176,11 @@
       "QUERY_JOB_ADS": "Erstellen Sie eine Stellenanzeige. Die Position ist \"{text}\". Schreiben Sie keine Erklärungen in die Antworten.",
       "FIRST_MESSAGE_JOB_ADS": "Für welche Position stellen Sie ein?"
     }
+  },
+  "SETTINGS_PAGE": {
+    "RATE_US": "Bewerten Sie uns",
+    "TERMS_OF_USE": "Nutzungsbedingungen",
+    "PRIVACY_POLICY": "Datenschutzrichtlinie",
+    "LIMITLESS_MEMBERSHIP": "Unbegrenzte Mitgliedschaft"
   }
 }

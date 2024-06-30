@@ -176,5 +176,11 @@
       "QUERY_JOB_ADS": "Crie um anúncio de emprego. A posição é \"{text}\". Não escreva explicações nas respostas.",
       "FIRST_MESSAGE_JOB_ADS": "Para qual posição você está contratando?"
     }
+  },
+  "SETTINGS_PAGE": {
+    "RATE_US": "Avalie-nos",
+    "TERMS_OF_USE": "Termos de Uso",
+    "PRIVACY_POLICY": "Política de Privacidade",
+    "LIMITLESS_MEMBERSHIP": "Associação Ilimitada"
   }
 }

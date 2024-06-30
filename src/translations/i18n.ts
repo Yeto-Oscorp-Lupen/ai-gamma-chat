@@ -10,7 +10,7 @@ import common_ru from './ru/common.json';
 import {PHONE_LANGUAGE} from '../constants';
 
 i18n.use(initReactI18next).init({
-  lng: 'ru',
+  lng: PHONE_LANGUAGE,
   fallbackLng: 'en',
   compatibilityJSON: 'v3',
   resources: {

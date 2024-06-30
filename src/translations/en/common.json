@@ -176,5 +176,11 @@
       "QUERY_JOB_ADS": "Create a job advertisement. The position is \"{text}\". Do not write explanations in replies.",
       "FIRST_MESSAGE_JOB_ADS": "What position are you hiring for?"
     }
+  },
+  "SETTINGS_PAGE": {
+    "RATE_US": "Rate Us",
+    "TERMS_OF_USE": "Terms of Use",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "LIMITLESS_MEMBERSHIP": "Limitless Membership"
   }
 }

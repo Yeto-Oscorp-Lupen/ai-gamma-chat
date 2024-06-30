@@ -19,6 +19,7 @@ export default StyleSheet.create({
     fontFamily: theme.font.semiBold,
     fontSize: 20,
     color: theme.colors.main.white,
+    textAlign: 'center',
   },
   empty: {
     width: 20,

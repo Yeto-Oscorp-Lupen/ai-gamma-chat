@@ -176,5 +176,11 @@
       "QUERY_JOB_ADS": "Créez une annonce de recrutement. Le poste est \"{text}\". Ne rédigez pas d'explications dans les réponses.",
       "FIRST_MESSAGE_JOB_ADS": "Pour quel poste recrutez-vous?"
     }
+  },
+  "SETTINGS_PAGE": {
+    "RATE_US": "Évaluez-nous",
+    "TERMS_OF_USE": "Conditions d'utilisation",
+    "PRIVACY_POLICY": "Politique de confidentialité",
+    "LIMITLESS_MEMBERSHIP": "Adhésion illimitée"
   }
 }
