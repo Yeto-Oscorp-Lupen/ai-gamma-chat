@@ -18,8 +18,11 @@ import AnimatedTyping from '../../utils/AnimatedTyping';
 import {Refresh} from '../../components/Icons';
 import styles from './styles';
 import {setFreeRightsToStorage} from '../../utils/storage';
+import useTranslation from '../../hooks/useTranslation';
+import {PHONE_LANGUAGE} from '../../constants';
 
 const TasksChatPage = ({route, navigation}: any) => {
+  const {t} = useTranslation('common');
   const dispatch = useDispatch();
   const {item} = route.params;
   const scrollRef = useRef<ScrollView>(null);
@@ -29,7 +32,7 @@ const TasksChatPage = ({route, navigation}: any) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [conversation, setConversation] = useState<any>([]);
   const [showingConversation, setShowingConversation] = useState<any>([
-    {role: 'system', content: item?.firstMessage},
+    {role: 'system', content: t(`TASKS_PAGE.TASKS.${item?.firstMessage}`)},
   ]);
 
   const setNewRightCount = async () => {
@@ -39,15 +42,17 @@ const TasksChatPage = ({route, navigation}: any) => {
 
   const prepareFirstQuery = (text: string) => {
     let firstQuery = item.query.replace('{text}', text);
+    firstQuery += ` also, please chat me in "${PHONE_LANGUAGE}" language.`;
+
     return firstQuery;
   };
 
   const handleSubmit = useCallback(async () => {
     vibrate();
-    if (!isSubs && (!freeRights || freeRights <= 0)) {
-      navigation.navigate('PurchasePage');
-      return false;
-    }
+    // if (!isSubs && (!freeRights || freeRights <= 0)) {
+    //   navigation.navigate('PurchasePage');
+    //   return false;
+    // }
 
     if (question?.length) {
       setTimeout(() => scrollRef?.current?.scrollToEnd({animated: true}), 200);
@@ -87,7 +92,9 @@ const TasksChatPage = ({route, navigation}: any) => {
     }
     setQuestion('');
     setConversation([]);
-    setShowingConversation([{role: 'system', content: item?.firstMessage}]);
+    setShowingConversation([
+      {role: 'system', content: t(`TASKS_PAGE.TASKS.${item?.firstMessage}`)},
+    ]);
   };
 
   return (
@@ -99,7 +106,7 @@ const TasksChatPage = ({route, navigation}: any) => {
       </View>
       {Object?.keys(showingConversation)?.length === 0 ? (
         <View style={styles.container}>
-          <Text style={styles.welcomeText}>Welcome to the AI Chatbot!</Text>
+          <Text style={styles.welcomeText}>{t('WELCOME_TO_AI_CHATBOT')}</Text>
         </View>
       ) : (
         <ScrollView

@@ -18,8 +18,10 @@ import AnimatedTyping from '../../utils/AnimatedTyping';
 import styles from './styles';
 import {Refresh} from '../../components/Icons';
 import {setFreeRightsToStorage} from '../../utils/storage';
+import useTranslation from '../../hooks/useTranslation';
 
 const ChatsChatPage = ({route, navigation}: any) => {
+  const {t} = useTranslation('common');
   const dispatch = useDispatch();
   const scrollRef = useRef<ScrollView>(null);
   const {isSubs, freeRights} = useSelector((state: any) => state.app);
@@ -30,7 +32,10 @@ const ChatsChatPage = ({route, navigation}: any) => {
 
   useEffect(() => {
     if (route?.params?.initialPrompt) {
-      setQuestion(route.params.initialPrompt);
+      console.log(route.params.initialPrompt);
+      setQuestion(
+        t(`CHATS_PAGE.QUICK_ANSWER_BOX.${route.params.initialPrompt}`),
+      );
       handleSubmit();
     }
   }, []);
@@ -85,7 +90,7 @@ const ChatsChatPage = ({route, navigation}: any) => {
       </View>
       {Object?.keys(conversation)?.length === 0 ? (
         <View style={styles.containerEmpty}>
-          <Text style={styles.welcomeText}>Welcome to the AI Chatbot!</Text>
+          <Text style={styles.welcomeText}>{t('WELCOME_TO_AI_CHATBOT')}</Text>
         </View>
       ) : (
         <ScrollView

@@ -1,5 +1,6 @@
 import {Dimensions} from 'react-native';
 import {theme} from './theme';
+import {getLocales} from 'react-native-localize';
 
 export const COMMON_ANIMATION_DURATION = 400;
 export const WIDTH = Dimensions.get('window').width;
@@ -37,3 +38,5 @@ export const DUMMY_IMAGES = [
     isLock: true,
   },
 ];
+
+export const PHONE_LANGUAGE = getLocales()[0].languageCode;
