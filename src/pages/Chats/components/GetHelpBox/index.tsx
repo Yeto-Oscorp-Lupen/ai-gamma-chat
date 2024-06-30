@@ -125,7 +125,7 @@ const HelpButton = ({
 };
 
 const GetHelpBox = ({animatedValue, navigation}: GetHelpBoxPropsType) => {
-  const {t} = useTranslation('common', 'GET_HELP_BOX');
+  const {t} = useTranslation('common', 'CHATS_PAGE.GET_HELP_BOX');
 
   return (
     <View style={styles.container}>

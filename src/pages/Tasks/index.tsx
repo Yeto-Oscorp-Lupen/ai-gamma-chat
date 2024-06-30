@@ -12,8 +12,10 @@ import StickyImageMessage from '../../components/StickyImageMessage';
 import AnimatedPressable from '../../components/AnimatedPressable';
 import {useSelector} from 'react-redux';
 import GammaButton from './components/GammaButton';
+import useTranslation from '../../hooks/useTranslation';
 
 const TasksPage = ({navigation}: any) => {
+  const {t} = useTranslation('common', 'TASKS_PAGE');
   const {isSubs} = useSelector((state: any) => state.app);
   const actionAnimatedValue = useRef(new Animated.Value(0)).current;
   const taskAnimatedValues = useRef(
@@ -27,8 +29,8 @@ const TasksPage = ({navigation}: any) => {
   useFocusEffect(
     useCallback(() => {
       const cat = TASKS_ITEMS.map(task => task.category);
-      setCategories(['Popular', ...new Set(cat)]);
-      filterTasks('Popular');
+      setCategories(['POPULAR', ...new Set(cat)]);
+      filterTasks('POPULAR');
       animateVisible(actionAnimatedValue);
       return () => animateHide(actionAnimatedValue);
     }, []),
@@ -63,7 +65,7 @@ const TasksPage = ({navigation}: any) => {
     vibrate();
     setSelectedCategory(category);
     const filteredTasks = TASKS_ITEMS.filter(task => {
-      if (category === 'Popular') {
+      if (category === 'POPULAR') {
         return task.isPopular;
       }
       return task.category === category;
@@ -104,7 +106,7 @@ const TasksPage = ({navigation}: any) => {
                     : styles.categoryChip
                 }>
                 <Animated.Text style={styles.categoryChipText}>
-                  {category}
+                  {t(`CATEGORIES.${category}`)}
                 </Animated.Text>
               </AnimatedPressable>
             )}
@@ -138,8 +140,8 @@ const TasksPage = ({navigation}: any) => {
                 <TaskItem
                   imageUrl={task?.imageUrl}
                   imageText={task?.imageText}
-                  name={task.name}
-                  desc={task.desc}
+                  name={t(`TASKS.${task.name}`)}
+                  desc={t(`TASKS.${task.desc}`)}
                   onPress={() => handleTaskItemPress(task)}
                 />
               </Animated.View>

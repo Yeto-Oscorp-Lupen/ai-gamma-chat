@@ -3,13 +3,14 @@ import AnimatedPressable from '../../../../components/AnimatedPressable';
 import styles from './styles';
 import AnimatedView from '../../../../components/AnimatedView';
 import {AnimatedValueType} from '../../../../types';
+import useTranslation from '../../../../hooks/useTranslation';
 
 enum HintTitles {
-  ASK_FOR_ADVICE = 'Ask for Advice',
-  HAVE_FUN = 'Have Fun',
-  WRITE_EDIT = 'Write & Edit',
-  IMPROVE_HEALTH = 'Improve Health',
-  TALK_PHILOSOPHY = 'Talk Philosophy',
+  ASK_FOR_ADVICE = 'ASK_FOR_ADVICE',
+  HAVE_FUN = 'HAVE_FUN',
+  WRITE_EDIT = 'WRITE_AND_EDIT',
+  IMPROVE_HEALTH = 'IMPROVE_HEALTH',
+  TALK_PHILOSOPHY = 'TALK_PHILOSOPHY',
 }
 
 type HintType = {
@@ -20,26 +21,23 @@ type HintType = {
 const HINTS: HintType[] = [
   {
     title: HintTitles.ASK_FOR_ADVICE,
-    questions: [
-      'Give me a step-by-step plan to get rich',
-      'How can I get a promotion?',
-    ],
+    questions: ['STEP_BY_STEP_PLAN', 'HOW_TO_GET_PROMOTION'],
   },
   {
     title: HintTitles.HAVE_FUN,
-    questions: ['Tell me a joke'],
+    questions: ['TELL_ME_A_JOKE'],
   },
   {
     title: HintTitles.WRITE_EDIT,
-    questions: ['Create a one-page essay on The Great Gatsby'],
+    questions: ['ONE_PAGE_ESSAY_GATSBY'],
   },
   {
     title: HintTitles.IMPROVE_HEALTH,
-    questions: ['How many hours of sleep does a person need?'],
+    questions: ['HOURS_OF_SLEEP'],
   },
   {
     title: HintTitles.TALK_PHILOSOPHY,
-    questions: ['What is the meaning of life?'],
+    questions: ['MEANING_OF_LIFE'],
   },
 ];
 
@@ -54,47 +52,55 @@ type HintBoxPropsType = {
   navigation: any;
 };
 
-const HintBox = ({hint, animatedValue, navigation}: HintBoxPropsType) => (
-  <View style={styles.hintContainer}>
-    <AnimatedView animatedValue={animatedValue}>
-      <Text style={styles.hintText}>{hint.title}</Text>
-    </AnimatedView>
-    {hint.questions.map((question: string, i: number) => (
-      <AnimatedView animatedValue={animatedValue} key={i}>
-        <AnimatedPressable
-          key={i}
-          onPress={() =>
-            navigation.navigate('ChatsChatPage', {
-              initialPrompt: question,
-            })
-          }
-          style={styles.answerButton}>
-          <Text style={styles.hintText}>{question}</Text>
-        </AnimatedPressable>
+const HintBox = ({hint, animatedValue, navigation}: HintBoxPropsType) => {
+  const {t} = useTranslation('common', 'CHATS_PAGE.QUICK_ANSWER_BOX');
+
+  return (
+    <View style={styles.hintContainer}>
+      <AnimatedView animatedValue={animatedValue}>
+        <Text style={styles.hintText}>{t(hint.title)}</Text>
       </AnimatedView>
-    ))}
-  </View>
-);
+      {hint.questions.map((question: string, i: number) => (
+        <AnimatedView animatedValue={animatedValue} key={i}>
+          <AnimatedPressable
+            key={i}
+            onPress={() =>
+              navigation.navigate('ChatsChatPage', {
+                initialPrompt: question,
+              })
+            }
+            style={styles.answerButton}>
+            <Text style={styles.hintText}>{t(question)}</Text>
+          </AnimatedPressable>
+        </AnimatedView>
+      ))}
+    </View>
+  );
+};
 
 const QuickAnswersBox = ({
   animatedValue,
   navigation,
-}: QuickAnswersBoxPropsType) => (
-  <View style={styles.container}>
-    <AnimatedView animatedValue={animatedValue}>
-      <Text style={styles.title}>Receive quick answers</Text>
-    </AnimatedView>
-    <View style={styles.hintsContainer}>
-      {HINTS.map((hint: HintType, i: number) => (
-        <HintBox
-          navigation={navigation}
-          key={i}
-          hint={hint}
-          animatedValue={animatedValue}
-        />
-      ))}
+}: QuickAnswersBoxPropsType) => {
+  const {t} = useTranslation('common', 'CHATS_PAGE.QUICK_ANSWER_BOX');
+
+  return (
+    <View style={styles.container}>
+      <AnimatedView animatedValue={animatedValue}>
+        <Text style={styles.title}>{t('RECEIVE_QUICK_ANSWERS')}</Text>
+      </AnimatedView>
+      <View style={styles.hintsContainer}>
+        {HINTS.map((hint: HintType, i: number) => (
+          <HintBox
+            navigation={navigation}
+            key={i}
+            hint={hint}
+            animatedValue={animatedValue}
+          />
+        ))}
+      </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default QuickAnswersBox;
