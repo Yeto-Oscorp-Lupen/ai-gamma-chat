@@ -4,13 +4,27 @@
 
   ],
   "products" : [
-
+    {
+      "displayPrice" : "44.99",
+      "familyShareable" : false,
+      "internalID" : "6505116602",
+      "localizations" : [
+        {
+          "description" : "Lifetime subscription for unlimited usage.",
+          "displayName" : "Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.aichat.lifetime",
+      "referenceName" : "Lifetime",
+      "type" : "NonConsumable"
+    }
   ],
   "settings" : {
     "_applicationInternalID" : "6474566516",
     "_developerTeamID" : "55FR8MFB3T",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 738348201.80287802,
+    "_lastSynchronizedDate" : 741634208.75065601,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [

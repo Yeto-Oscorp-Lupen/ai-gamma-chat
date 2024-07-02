@@ -27,6 +27,8 @@ const PurchaseButton: FunctionComponent<Props> = ({
     'com.yeto.yearly': 'Annual',
     'com.yeto.weekly': 'Weekly',
     'com.aichat.weekly': 'Weekly',
+    'com.yeto.lifetime': 'Lifetime',
+    'com.aichat.lifetime': 'Lifetime',
   };
 
   const INFO_TEXTS: {[key: string]: string} = {
@@ -36,6 +38,8 @@ const PurchaseButton: FunctionComponent<Props> = ({
     'com.aichat.weekly': 'Weekly',
     'com.aichat.yearly': 'Annually',
     'com.yeto.yearly': 'Annually',
+    'com.yeto.lifetime': 'One time use everytime',
+    'com.aichat.lifetime': 'One time use everytime',
   };
 
   const getSubText = (productId: string): string => {
@@ -127,9 +131,10 @@ const PurchaseButton: FunctionComponent<Props> = ({
           </Text>
           <Text style={style.perWeekText}>
             {item?.productId === 'com.yeto.weekly' ||
-            item?.productId === 'com.aichat.weekly'
+            item?.productId === 'com.aichat.weekly' ||
+            item?.productId === 'com.aichat.lifetime'
               ? ''
-              : 'per week'}
+              : 'per week' + item.productId}
           </Text>
         </View>
       </View>

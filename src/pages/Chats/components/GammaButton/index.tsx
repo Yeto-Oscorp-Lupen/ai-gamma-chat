@@ -18,7 +18,7 @@ const GammaButton = ({animatedValue, navigation}: GammaButtonPropsType) => {
     <AnimatedView animatedValue={animatedValue}>
       <AnimatedPressable
         style={styles.gammaButton}
-        onPress={() => navigation.navigate('PurchasePage')}>
+        onPress={() => navigation.navigate('PurchasePage1')}>
         <Image
           resizeMode="contain"
           source={require('../../../../assets/chats/gamma.png')}

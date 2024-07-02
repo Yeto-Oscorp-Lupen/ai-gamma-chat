@@ -5687,6 +5687,7 @@ __metadata:
     react-native-store-review: ^0.4.3
     react-native-svg: ^15.3.0
     react-native-toast-message: ^2.2.0
+    react-native-video: ^6.3.0
     react-redux: ^9.1.2
     react-test-renderer: 18.2.0
     typescript: 5.0.4
@@ -8949,6 +8950,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: b286b8d5ca0f21737c2e0a8e9c2d6dab2c06a3895335aa541c69eeb42d526cc6f3951069e59d8d346d3e6cafb8feaa450c35b0efe7c3d51ff81351d1477e71eb
+  languageName: node
+  linkType: hard
+
+"react-native-video@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "react-native-video@npm:6.3.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: fd3995eb14a64ff2848059baf1e6ad797fad10cec05a31c09d6eaf57433930411b7e6ae11a8d086f2ecc05b4434f884005c9425ac9b2e281406ca389ae366694
   languageName: node
   linkType: hard
 

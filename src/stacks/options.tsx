@@ -1,4 +1,4 @@
-import {Platform, Pressable} from 'react-native';
+import {Pressable} from 'react-native';
 import {COMMON_ANIMATION_DURATION} from '../constants';
 import {theme} from '../constants/theme';
 import type {NativeStackNavigationOptions as NativeStackNavigationOptionsType} from '@react-navigation/native-stack';
@@ -79,10 +79,8 @@ export const PurchasePagesOptions = ({
   title: '',
   headerShadowVisible: false,
   headerStyle: {
-    backgroundColor:
-      Platform.OS === 'ios' ? 'transparent' : theme.colors.background.purchase,
-    borderBottomColor:
-      Platform.OS === 'ios' ? 'transparent' : theme.colors.background.purchase,
+    backgroundColor: theme.colors.background.purchase,
+    borderBottomColor: theme.colors.background.purchase,
   },
   headerLeft: () => (
     <Pressable

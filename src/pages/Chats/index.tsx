@@ -36,7 +36,7 @@ const ChatsPage = ({navigation}: any) => {
 
   const init = async () => {
     if (isSubs === false) {
-      navigation.navigate('PurchasePage');
+      navigation.navigate('PurchasePage1');
     }
   };
 

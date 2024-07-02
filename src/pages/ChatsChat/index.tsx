@@ -48,7 +48,7 @@ const ChatsChatPage = ({route, navigation}: any) => {
   const handleSubmit = useCallback(async () => {
     vibrate();
     if (!isSubs && (!freeRights || freeRights <= 0)) {
-      navigation.navigate('PurchasePage');
+      navigation.navigate('PurchasePage1');
       return false;
     }
 
@@ -74,7 +74,7 @@ const ChatsChatPage = ({route, navigation}: any) => {
 
   const refresh = async () => {
     if (!isSubs && (!freeRights || freeRights <= 0)) {
-      navigation.navigate('PurchasePage');
+      navigation.navigate('PurchasePage1');
       return false;
     }
     setQuestion('');
