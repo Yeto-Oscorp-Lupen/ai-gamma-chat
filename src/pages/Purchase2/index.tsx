@@ -2,7 +2,6 @@ import {FunctionComponent, useEffect, useState} from 'react';
 import {
   Alert,
   FlatList,
-  Image,
   Linking,
   Platform,
   ScrollView,
@@ -23,60 +22,38 @@ import PurchaseButton from '../../components/PurchaseButton';
 import {setIsSubs} from '../../store/features/appSlice';
 import {getPurchases} from '../../utils';
 import styles from './styles';
-import {ArrowRight} from '../../components/Icons';
-import AnimatedBorderView from '../../components/AnimatedBorderView';
-import {WIDTH} from '../../constants';
+import {ArrowRight, Wizard} from '../../components/Icons';
+import InfoItem from './components/InfoItem';
 
-const desc = [
+const INFORMATIONS = [
   {
-    title: 'Answers From GPT-4o',
-    description: 'More accurate & detailed answers',
+    title: 'Exclusive to Plus',
+    description:
+      'Plus users get access to Gamma AI and the latest beta features.',
     image: require('../../assets/purchase/desc-1.png'),
   },
   {
-    title: 'Higher word limit',
-    description: 'Type longer messages',
+    title: 'Built for Quality',
+    description:
+      'Gamma AI excels at a diverse range of personal and work tasks.',
     image: require('../../assets/purchase/desc-2.png'),
   },
   {
-    title: 'No Limits',
-    description: 'Have unlimited dialogues',
+    title: 'Limited Use',
+    description: 'Usage caps for Gamma AI are reset regularly.',
     image: require('../../assets/purchase/desc-3.png'),
   },
-  {
-    title: 'No Ads',
-    description: 'Enjoy Chat & Ask AI without any ads',
-    image: require('../../assets/purchase/desc-4.png'),
-  },
 ];
 
-const reviews = [
-  {
-    image: require('../../assets/intro/2_1.png'),
-  },
-  {
-    image: require('../../assets/intro/2_2.png'),
-  },
-  {
-    image: require('../../assets/intro/2_3.png'),
-  },
-];
-
-const PurchasePage1: FunctionComponent = ({navigation}: any) => {
+const PurchasePage2: FunctionComponent = ({navigation}: any) => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState<boolean>(true);
   const [subscriptions, setSubscriptions] = useState<any>([]);
   const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(0);
   const itemSubs = Platform.select({
-    ios: ['com.aichat.lifetime'], // 'com.aichat.monthly',
+    ios: ['com.aichat.weekly', 'com.aichat.yearly'], // 'com.aichat.monthly',
     android: ['com.yeto.monthly', 'com.yeto.weekly', 'com.yeto.yearly'],
   } as any);
-
-  // const order = {
-  //   yearly: 1,
-  //   // monthly: 2,
-  //   weekly: 3,
-  // };
 
   useEffect(() => {
     const bootstrapAsync = async () => {
@@ -157,44 +134,27 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
   };
 
   return (
-    <ScrollView style={styles.mainBackground}>
-      <View style={styles.imagesContainer}>
-        <AnimatedBorderView />
+    <ScrollView style={styles.container}>
+      <View style={styles.wizardIconContainer}>
+        <Wizard height={60} width={66} style={styles.wizardIcon} />
+      </View>
+      <Text style={styles.title}>Gamma AI</Text>
 
-        <FlatList
-          data={desc}
-          keyExtractor={(item: any) => item.title}
-          renderItem={({item}) => (
-            <DescItem
-              title={item.title}
-              image={item.image}
-              description={item.description}
-            />
-          )}
-        />
-
-        <View style={styles.reviewView}>
-          <Text style={styles.reviewTitle}>Ratings and Reviews</Text>
-          <Image
-            style={styles.reviewImage}
-            source={require('../../assets/purchase/ratingView.png')}
+      <FlatList
+        data={INFORMATIONS}
+        keyExtractor={(item: any) => item.title}
+        contentContainerStyle={styles.infosContentContainer}
+        style={styles.infosContainer}
+        renderItem={({item}) => (
+          <InfoItem
+            title={item.title}
+            image={item.image}
+            description={item.description}
           />
-        </View>
+        )}
+      />
 
-        <FlatList
-          data={reviews}
-          keyExtractor={(_: any, index: number) => index.toString()}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({item}) => <ReviewItem image={item.image} />}
-        />
-
-        <Image
-          style={styles.review2Image}
-          resizeMode="contain"
-          source={require('../../assets/purchase/review2.png')}
-        />
-
+      <View style={styles.purchaseButtonsContainer}>
         {(subscriptions.length ? subscriptions : itemSubs).map(
           (item: any, index: number) => (
             <PurchaseButton
@@ -207,14 +167,14 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
             />
           ),
         )}
-
-        <CommonButton
-          text="Continue"
-          onPress={handlePurchaseButton}
-          styles={styles.button}
-          icon={<ArrowRight width={20} height={20} color={'#fff'} />}
-        />
       </View>
+
+      <CommonButton
+        text="Continue"
+        onPress={handlePurchaseButton}
+        styles={styles.continueButton}
+        icon={<ArrowRight width={20} height={20} color={'#fff'} />}
+      />
 
       <View style={styles.footer}>
         <View style={styles.footerSubButtonsContainer}>
@@ -231,36 +191,9 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
           </TouchableHighlight>
         </View>
       </View>
-
       <View style={styles.separator} />
     </ScrollView>
   );
 };
 
-const DescItem = ({title, description, image}: any) => {
-  return (
-    <View style={[styles.container, {width: WIDTH - 64}]}>
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={image} resizeMode="contain" />
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
-      </View>
-    </View>
-  );
-};
-
-const ReviewItem = ({image}: any) => {
-  return (
-    <View style={styles.reviewCard}>
-      <Image
-        resizeMode="contain"
-        style={styles.reviewCardImage}
-        source={image}
-      />
-    </View>
-  );
-};
-
-export default PurchasePage1;
+export default PurchasePage2;

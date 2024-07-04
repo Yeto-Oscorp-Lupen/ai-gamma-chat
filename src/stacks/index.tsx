@@ -20,6 +20,7 @@ import CustomTabBar from '../components/CustomTabBar';
 import ChatsPage from '../pages/Chats';
 import TasksPage from '../pages/Tasks';
 import PurchasePage1 from '../pages/Purchase1';
+import PurchasePage2 from '../pages/Purchase2';
 import SettingsPage from '../pages/Settings';
 import TasksChatPage from '../pages/TasksChat';
 import ChatsChatPage from '../pages/ChatsChat';
@@ -87,6 +88,11 @@ const StackWrapper = () => {
         options={PurchasePagesOptions}
         name="PurchasePage1"
         component={PurchasePage1}
+      />
+      <Stack.Screen
+        options={PurchasePagesOptions}
+        name="PurchasePage2"
+        component={PurchasePage2}
       />
       <Stack.Screen
         options={RootTabsStackOptions}

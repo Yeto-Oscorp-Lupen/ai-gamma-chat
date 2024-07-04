@@ -12,7 +12,6 @@ export default StyleSheet.create({
   imagesContainer: {
     alignItems: 'center',
   },
-
   reviewView: {
     width: WIDTH - 64,
     marginTop: 42,
@@ -25,6 +24,7 @@ export default StyleSheet.create({
   review2Image: {
     marginTop: 32,
     height: 84,
+    marginBottom: theme.spacing(3),
   },
   reviewTitle: {
     fontSize: 20,
@@ -64,7 +64,7 @@ export default StyleSheet.create({
   },
   button: {
     width: 300,
-    marginTop: IS_IPHONE_MINI() ? 20 : 30,
+    marginTop: IS_IPHONE_MINI() ? theme.spacing(3) : theme.spacing(4),
     backgroundColor: theme.colors.main.primary,
   },
 
@@ -110,7 +110,7 @@ export default StyleSheet.create({
     fontFamily: theme.font.light,
     color: '#BCBCBC',
   },
-  seperator: {
-    height: 32,
+  separator: {
+    height: 50,
   },
 });

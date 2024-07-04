@@ -50,45 +50,45 @@ const PurchaseButton: FunctionComponent<Props> = ({
     return INFO_TEXTS[productId] || 'Weekly';
   };
 
-  const showPerWeekPrice = (productId: string) => {
-    if (productId === 'com.aichat.yearly') {
-      return item?.price
-        ? (item.price / 52).toFixed(2) + ' ' + item.currency
-        : '';
-    }
-    if (productId === 'com.yeto.yearly') {
-      const priceAmountMicros =
-        item?.subscriptionOfferDetails?.[0]?.pricingPhases
-          ?.pricingPhaseList?.[0]?.priceAmountMicros;
-      const priceCurrencyCode =
-        item?.subscriptionOfferDetails?.[0]?.pricingPhases
-          ?.pricingPhaseList?.[0]?.priceCurrencyCode;
-      const normalPrice = priceAmountMicros ? priceAmountMicros / 1000000 : 0;
+  // const showPerWeekPrice = (productId: string) => {
+  //   if (productId === 'com.aichat.yearly') {
+  //     return item?.price
+  //       ? (item.price / 52).toFixed(2) + ' ' + item.currency
+  //       : '';
+  //   }
+  //   if (productId === 'com.yeto.yearly') {
+  //     const priceAmountMicros =
+  //       item?.subscriptionOfferDetails?.[0]?.pricingPhases
+  //         ?.pricingPhaseList?.[0]?.priceAmountMicros;
+  //     const priceCurrencyCode =
+  //       item?.subscriptionOfferDetails?.[0]?.pricingPhases
+  //         ?.pricingPhaseList?.[0]?.priceCurrencyCode;
+  //     const normalPrice = priceAmountMicros ? priceAmountMicros / 1000000 : 0;
 
-      return priceAmountMicros
-        ? (normalPrice / 52).toFixed(2) + ' ' + priceCurrencyCode
-        : '';
-    }
-    if (productId === 'com.aichat.monthly') {
-      return item?.price
-        ? (item.price / 12).toFixed(2) + ' ' + item.currency
-        : '';
-    }
-    if (productId === 'com.yeto.monthly') {
-      const priceAmountMicros =
-        item?.subscriptionOfferDetails?.[0]?.pricingPhases
-          ?.pricingPhaseList?.[0]?.priceAmountMicros;
-      const priceCurrencyCode =
-        item?.subscriptionOfferDetails?.[0]?.pricingPhases
-          ?.pricingPhaseList?.[0]?.priceCurrencyCode;
-      const normalPrice = priceAmountMicros ? priceAmountMicros / 1000000 : 0;
+  //     return priceAmountMicros
+  //       ? (normalPrice / 52).toFixed(2) + ' ' + priceCurrencyCode
+  //       : '';
+  //   }
+  //   if (productId === 'com.aichat.monthly') {
+  //     return item?.price
+  //       ? (item.price / 12).toFixed(2) + ' ' + item.currency
+  //       : '';
+  //   }
+  //   if (productId === 'com.yeto.monthly') {
+  //     const priceAmountMicros =
+  //       item?.subscriptionOfferDetails?.[0]?.pricingPhases
+  //         ?.pricingPhaseList?.[0]?.priceAmountMicros;
+  //     const priceCurrencyCode =
+  //       item?.subscriptionOfferDetails?.[0]?.pricingPhases
+  //         ?.pricingPhaseList?.[0]?.priceCurrencyCode;
+  //     const normalPrice = priceAmountMicros ? priceAmountMicros / 1000000 : 0;
 
-      return priceAmountMicros
-        ? (normalPrice / 12).toFixed(2) + ' ' + priceCurrencyCode
-        : '';
-    }
-    return '';
-  };
+  //     return priceAmountMicros
+  //       ? (normalPrice / 12).toFixed(2) + ' ' + priceCurrencyCode
+  //       : '';
+  //   }
+  //   return '';
+  // };
 
   const renderButtonContent = () => (
     <View
@@ -125,7 +125,7 @@ const PurchaseButton: FunctionComponent<Props> = ({
         </View>
       </View>
       <View style={style.rightContainer}>
-        <View style={style.perWeekTextContainer}>
+        {/* <View style={style.perWeekTextContainer}>
           <Text style={style.perWeekText}>
             {showPerWeekPrice(item?.productId || '')}
           </Text>
@@ -136,7 +136,7 @@ const PurchaseButton: FunctionComponent<Props> = ({
               ? ''
               : 'per week' + item.productId}
           </Text>
-        </View>
+        </View> */}
       </View>
     </View>
   );

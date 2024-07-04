@@ -12,3 +12,4 @@ export {default as SettingsFill} from './SettingsFill';
 export {default as StarFill} from './StarFill';
 export {default as Task} from './Task';
 export {default as TermsFill} from './TermsFill';
+export {default as Wizard} from './Wizard';
