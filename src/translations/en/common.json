@@ -177,7 +177,18 @@
       "JOB_ADS": "Job Ads",
       "DESC_JOB_ADS": "Write a job description that attracts ideal candidates.",
       "QUERY_JOB_ADS": "Create a job advertisement. The position is \"{text}\". Do not write explanations in replies.",
-      "FIRST_MESSAGE_JOB_ADS": "What position are you hiring for?"
+      "FIRST_MESSAGE_JOB_ADS": "What position are you hiring for?",
+
+      "CHATS_FIRST_MESSAGE_WRITING": "What’s the topic of your essay?",
+      "CHATS_QUERY_WRITING": "Write an essay on the following topic: {text}",
+      "CHATS_FIRST_MESSAGE_PROMOTION": "What’s the purpose of the email?",
+      "CHATS_QUERY_PROMOTION": "Draft an email with the following purpose: {text}",
+      "CHATS_FIRST_MESSAGE_STUDYING": "What theorem would you like me to explain?",
+      "CHATS_QUERY_STUDYING": "Explain the following theorem: {text}",
+      "CHATS_FIRST_MESSAGE_HEALTH": "What are your goals?",
+      "CHATS_QUERY_HEALTH": "Create a training and meal plan for the following goals: {text}",
+      "CHATS_FIRST_MESSAGE_SOCIAL": "What do you want the post to be about?",
+      "CHATS_QUERY_SOCIAL": "Create an Instagram post about: {text}"
     }
   },
   "SETTINGS_PAGE": {

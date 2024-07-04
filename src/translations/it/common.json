@@ -177,7 +177,18 @@
       "JOB_ADS": "Annunci di lavoro",
       "DESC_JOB_ADS": "Scrivi una descrizione del lavoro che attira i candidati ideali.",
       "QUERY_JOB_ADS": "Crea un annuncio di lavoro. La posizione è \"{text}\". Non scrivere spiegazioni nelle risposte.",
-      "FIRST_MESSAGE_JOB_ADS": "Per quale posizione stai assumendo?"
+      "FIRST_MESSAGE_JOB_ADS": "Per quale posizione stai assumendo?",
+
+      "CHATS_FIRST_MESSAGE_WRITING": "Qual è l'argomento del tuo saggio?",
+      "CHATS_QUERY_WRITING": "Scrivi un saggio sul seguente argomento: {text}",
+      "CHATS_FIRST_MESSAGE_PROMOTION": "Qual è lo scopo dell'e-mail?",
+      "CHATS_QUERY_PROMOTION": "Scrivi un'e-mail con il seguente scopo: {text}",
+      "CHATS_FIRST_MESSAGE_STUDYING": "Quale teorema vuoi che spieghi?",
+      "CHATS_QUERY_STUDYING": "Spiega il seguente teorema: {text}",
+      "CHATS_FIRST_MESSAGE_HEALTH": "Quali sono i tuoi obiettivi?",
+      "CHATS_QUERY_HEALTH": "Crea un piano di allenamento e alimentazione per i seguenti obiettivi: {text}",
+      "CHATS_FIRST_MESSAGE_SOCIAL": "Di cosa vuoi che parli il post?",
+      "CHATS_QUERY_SOCIAL": "Crea un post su Instagram su: {text}"
     }
   },
   "SETTINGS_PAGE": {

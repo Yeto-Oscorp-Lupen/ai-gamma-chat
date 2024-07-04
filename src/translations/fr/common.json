@@ -177,7 +177,18 @@
       "JOB_ADS": "Annonces d'emploi",
       "DESC_JOB_ADS": "Rédigez une description de poste qui attire les candidats idéaux.",
       "QUERY_JOB_ADS": "Créez une annonce de recrutement. Le poste est \"{text}\". Ne rédigez pas d'explications dans les réponses.",
-      "FIRST_MESSAGE_JOB_ADS": "Pour quel poste recrutez-vous?"
+      "FIRST_MESSAGE_JOB_ADS": "Pour quel poste recrutez-vous?",
+
+      "CHATS_FIRST_MESSAGE_WRITING": "Quel est le sujet de votre essai?",
+      "CHATS_QUERY_WRITING": "Rédigez un essai sur le sujet suivant: {text}",
+      "CHATS_FIRST_MESSAGE_PROMOTION": "Quel est le but de l'e-mail?",
+      "CHATS_QUERY_PROMOTION": "Rédigez un e-mail avec le but suivant: {text}",
+      "CHATS_FIRST_MESSAGE_STUDYING": "Quel théorème souhaitez-vous que j'explique?",
+      "CHATS_QUERY_STUDYING": "Expliquez le théorème suivant: {text}",
+      "CHATS_FIRST_MESSAGE_HEALTH": "Quels sont vos objectifs?",
+      "CHATS_QUERY_HEALTH": "Créez un plan d'entraînement et de repas pour les objectifs suivants: {text}",
+      "CHATS_FIRST_MESSAGE_SOCIAL": "De quoi voulez-vous que le post parle?",
+      "CHATS_QUERY_SOCIAL": "Créez un post Instagram sur: {text}"
     }
   },
   "SETTINGS_PAGE": {

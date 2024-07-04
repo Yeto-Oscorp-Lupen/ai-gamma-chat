@@ -177,7 +177,18 @@
       "JOB_ADS": "Stellenanzeigen",
       "DESC_JOB_ADS": "Schreiben Sie eine Stellenbeschreibung, die ideale Kandidaten anzieht.",
       "QUERY_JOB_ADS": "Erstellen Sie eine Stellenanzeige. Die Position ist \"{text}\". Schreiben Sie keine Erklärungen in die Antworten.",
-      "FIRST_MESSAGE_JOB_ADS": "Für welche Position stellen Sie ein?"
+      "FIRST_MESSAGE_JOB_ADS": "Für welche Position stellen Sie ein?",
+
+      "CHATS_FIRST_MESSAGE_WRITING": "Was ist das Thema deines Aufsatzes?",
+      "CHATS_QUERY_WRITING": "Schreibe einen Aufsatz zu folgendem Thema: {text}",
+      "CHATS_FIRST_MESSAGE_PROMOTION": "Was ist der Zweck der E-Mail?",
+      "CHATS_QUERY_PROMOTION": "Entwerfe eine E-Mail mit folgendem Zweck: {text}",
+      "CHATS_FIRST_MESSAGE_STUDYING": "Welches Theorem soll ich erklären?",
+      "CHATS_QUERY_STUDYING": "Erkläre das folgende Theorem: {text}",
+      "CHATS_FIRST_MESSAGE_HEALTH": "Was sind deine Ziele?",
+      "CHATS_QUERY_HEALTH": "Erstelle einen Trainings- und Ernährungsplan für folgende Ziele: {text}",
+      "CHATS_FIRST_MESSAGE_SOCIAL": "Worum soll es in dem Beitrag gehen?",
+      "CHATS_QUERY_SOCIAL": "Erstelle einen Instagram-Beitrag über: {text}"
     }
   },
   "SETTINGS_PAGE": {

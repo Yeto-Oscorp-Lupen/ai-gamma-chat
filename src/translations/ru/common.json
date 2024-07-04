@@ -177,7 +177,18 @@
       "JOB_ADS": "Вакансии",
       "DESC_JOB_ADS": "Напишите описание вакансии, которое привлечет идеальных кандидатов",
       "QUERY_JOB_ADS": "Создайте объявление о вакансии. Должность: \"{text}\". Не пишите объяснений в ответах",
-      "FIRST_MESSAGE_JOB_ADS": "На какую должность вы набираете сотрудников?"
+      "FIRST_MESSAGE_JOB_ADS": "На какую должность вы набираете сотрудников?",
+
+      "CHATS_FIRST_MESSAGE_WRITING": "Какова тема вашего эссе?",
+      "CHATS_QUERY_WRITING": "Напишите эссе на следующую тему: {text}",
+      "CHATS_FIRST_MESSAGE_PROMOTION": "Какова цель этого письма?",
+      "CHATS_QUERY_PROMOTION": "Напишите письмо с следующей целью: {text}",
+      "CHATS_FIRST_MESSAGE_STUDYING": "Какую теорему вы хотите, чтобы я объяснил?",
+      "CHATS_QUERY_STUDYING": "Объясните следующую теорему: {text}",
+      "CHATS_FIRST_MESSAGE_HEALTH": "Каковы ваши цели?",
+      "CHATS_QUERY_HEALTH": "Создайте план тренировок и питания для следующих целей: {text}",
+      "CHATS_FIRST_MESSAGE_SOCIAL": "О чем вы хотите, чтобы был пост?",
+      "CHATS_QUERY_SOCIAL": "Создайте пост в Instagram на тему: {text}"
     }
   },
   "SETTINGS_PAGE": {

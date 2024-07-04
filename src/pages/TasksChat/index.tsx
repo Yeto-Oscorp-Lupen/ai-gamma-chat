@@ -41,7 +41,10 @@ const TasksChatPage = ({route, navigation}: any) => {
   };
 
   const prepareFirstQuery = (text: string) => {
-    let firstQuery = item.query.replace('{text}', text);
+    let firstQuery = t(`TASKS_PAGE.TASKS.${item?.query}`).replace(
+      '{text}',
+      text,
+    );
     firstQuery += ` also, please chat me in "${PHONE_LANGUAGE}" language.`;
 
     return firstQuery;
