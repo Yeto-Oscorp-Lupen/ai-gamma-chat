@@ -16,7 +16,7 @@ const AnimatedBorderView = () => {
   const leftAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    const duration = 15000; // Her kenarın süresi (15 saniye)
+    const duration = 12750; // Her kenarın süresi (15 saniye)
 
     // Animasyon sırasını tanımlıyoruz
     const startAnimation = () => {

@@ -1,7 +1,6 @@
 import {FunctionComponent, useEffect, useState} from 'react';
 import {
   Alert,
-  FlatList,
   Image,
   Linking,
   Platform,
@@ -164,33 +163,30 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
       <View style={styles.imagesContainer}>
         <AnimatedBorderView />
 
-        <FlatList
-          data={desc}
-          keyExtractor={(item: any) => item.title}
-          renderItem={({item}) => (
+        <View>
+          {desc.map(item => (
             <DescItem
               title={item.title}
               image={item.image}
               description={item.description}
             />
-          )}
-        />
+          ))}
+        </View>
 
         <View style={styles.reviewView}>
           <Text style={styles.reviewTitle}>{t('RATINGS_REVIEWS')}</Text>
           <Image
             style={styles.reviewImage}
+            resizeMode="contain"
             source={require('../../assets/purchase/ratingView.png')}
           />
         </View>
 
-        <FlatList
-          data={reviews}
-          keyExtractor={(_: any, index: number) => index.toString()}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({item}) => <ReviewItem image={item.image} />}
-        />
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {reviews.map((item, index) => (
+            <ReviewItem key={index.toString()} image={item.image} />
+          ))}
+        </ScrollView>
 
         <Image
           style={styles.review2Image}
@@ -256,9 +252,9 @@ const DescItem = ({title, description, image}: any) => {
   );
 };
 
-const ReviewItem = ({image}: any) => {
+const ReviewItem = ({image, key}: any) => {
   return (
-    <View style={styles.reviewCard}>
+    <View key={key} style={styles.reviewCard}>
       <Image
         resizeMode="contain"
         style={styles.reviewCardImage}

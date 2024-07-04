@@ -1,7 +1,6 @@
 import {FunctionComponent, useEffect, useState} from 'react';
 import {
   Alert,
-  FlatList,
   Linking,
   Platform,
   ScrollView,
@@ -147,19 +146,16 @@ const PurchasePage2: FunctionComponent = ({navigation}: any) => {
       </View>
       <Text style={styles.title}>Gamma AI</Text>
 
-      <FlatList
-        data={INFORMATIONS}
-        keyExtractor={(item: any) => item.title}
-        contentContainerStyle={styles.infosContentContainer}
-        style={styles.infosContainer}
-        renderItem={({item}) => (
+      <View style={styles.infosContainer}>
+        {INFORMATIONS.map((item, index) => (
           <InfoItem
+            key={index}
             title={item.title}
             image={item.image}
             description={item.description}
           />
-        )}
-      />
+        ))}
+      </View>
 
       <View style={styles.purchaseButtonsContainer}>
         {(subscriptions.length ? subscriptions : itemSubs).map(

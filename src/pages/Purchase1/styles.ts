@@ -19,7 +19,7 @@ export default StyleSheet.create({
   reviewImage: {
     marginTop: 16,
     width: WIDTH - 64,
-    height: 84,
+    height: 90,
   },
   review2Image: {
     marginTop: 32,
@@ -34,7 +34,7 @@ export default StyleSheet.create({
 
   reviewCard: {
     marginTop: 36,
-    width: WIDTH - 64,
+    width: WIDTH - 80,
     height: 220,
   },
   reviewCardImage: {

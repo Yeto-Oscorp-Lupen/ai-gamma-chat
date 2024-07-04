@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
 import {theme} from '../../constants/theme';
+import {IS_IPHONE_MINI} from '../../constants';
 
-export const PURCHASE_BUTTON_WIDTH = 330;
+export const PURCHASE_BUTTON_WIDTH = IS_IPHONE_MINI() ? 300 : 330;
 export const PURCHASE_BUTTON_HEIGHT = 70;
 export const PURCHASE_BUTTON_BORDER_RADIUS = 10;
 export const PURCHASE_BUTTON_BACKGROUND_COLOR = 'rgba(182,182,182,0.1)';

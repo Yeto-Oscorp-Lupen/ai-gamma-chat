@@ -7,6 +7,7 @@ export default StyleSheet.create({
     paddingHorizontal: PURCHASE_1_HORIZONTAL_PADDING,
     flexDirection: 'row',
     gap: theme.spacing(4),
+    marginTop: theme.spacing(3),
   },
   image: {
     width: 25,

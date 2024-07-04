@@ -36,7 +36,7 @@ const ChatsChatPage = ({route, navigation}: any) => {
       setQuestion(
         t(`CHATS_PAGE.QUICK_ANSWER_BOX.${route.params.initialPrompt}`),
       );
-      handleSubmit();
+      // handleSubmit();
     }
   }, []);
 
