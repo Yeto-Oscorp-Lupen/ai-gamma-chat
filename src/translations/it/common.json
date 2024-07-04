@@ -182,5 +182,29 @@
     "TERMS_OF_USE": "Termini di utilizzo",
     "PRIVACY_POLICY": "Informativa sulla privacy",
     "LIMITLESS_MEMBERSHIP": "Abbonamento illimitato"
+  },
+  "PURCHASE_PAGES": {
+    "EXCLUSIVE_TO_PLUS": "Esclusivo per Plus",
+    "PLUS_USERS_ACCESS": "Gli utenti Plus hanno accesso a Gamma AI e alle ultime funzionalità beta.",
+    "BUILT_FOR_QUALITY": "Costruito per la Qualità",
+    "GAMMA_AI_EXCELS": "Gamma AI eccelle in una vasta gamma di compiti personali e lavorativi.",
+    "LIMITED_USE": "Uso Limitato",
+    "USAGE_CAPS_RESET": "I limiti di utilizzo per Gamma AI vengono ripristinati regolarmente.",
+    "TERMS_OF_USE": "Termini di Utilizzo",
+    "PRIVACY_POLICY": "Politica sulla Privacy",
+    "RESTORE": "Ripristina",
+    "CONTINUE": "Continua",
+    "ANSWERS_FROM_GPT4O": "Risposte da GPT-4o",
+    "MORE_ACCURATE_DETAILED": "Risposte più accurate e dettagliate",
+    "HIGHER_WORD_LIMIT": "Limite di parole più alto",
+    "TYPE_LONGER_MESSAGES": "Scrivi messaggi più lunghi",
+    "NO_LIMITS": "Senza Limiti",
+    "UNLIMITED_DIALOGUES": "Avere dialoghi illimitati",
+    "NO_ADS": "Nessuna Pubblicità",
+    "ENJOY_CHAT_ASK_AI": "Goditi Chat & Ask AI senza pubblicità",
+    "PURCHASE_SUCCESS": "Acquisto Riuscito",
+    "THANK_YOU_PURCHASE": "Grazie per il tuo acquisto!",
+    "PURCHASE_FAILED": "Acquisto Fallito",
+    "RATINGS_REVIEWS": "Valutazioni e Recensioni"
   }
 }

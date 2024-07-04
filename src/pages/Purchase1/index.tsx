@@ -26,26 +26,27 @@ import styles from './styles';
 import {ArrowRight} from '../../components/Icons';
 import AnimatedBorderView from '../../components/AnimatedBorderView';
 import {WIDTH} from '../../constants';
+import useTranslation from '../../hooks/useTranslation';
 
 const desc = [
   {
-    title: 'Answers From GPT-4o',
-    description: 'More accurate & detailed answers',
+    title: 'ANSWERS_FROM_GPT4O',
+    description: 'MORE_ACCURATE_DETAILED',
     image: require('../../assets/purchase/desc-1.png'),
   },
   {
-    title: 'Higher word limit',
-    description: 'Type longer messages',
+    title: 'HIGHER_WORD_LIMIT',
+    description: 'TYPE_LONGER_MESSAGES',
     image: require('../../assets/purchase/desc-2.png'),
   },
   {
-    title: 'No Limits',
-    description: 'Have unlimited dialogues',
+    title: 'NO_LIMITS',
+    description: 'UNLIMITED_DIALOGUES',
     image: require('../../assets/purchase/desc-3.png'),
   },
   {
-    title: 'No Ads',
-    description: 'Enjoy Chat & Ask AI without any ads',
+    title: 'NO_ADS',
+    description: 'ENJOY_CHAT_ASK_AI',
     image: require('../../assets/purchase/desc-4.png'),
   },
 ];
@@ -64,6 +65,8 @@ const reviews = [
 
 const PurchasePage1: FunctionComponent = ({navigation}: any) => {
   const dispatch = useDispatch();
+  const {t} = useTranslation('common', 'PURCHASE_PAGES');
+
   const [loading, setLoading] = useState<boolean>(true);
   const [subscriptions, setSubscriptions] = useState<any>([]);
   const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(0);
@@ -116,7 +119,7 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
     setLoading(true);
     await requestSubscription({sku})
       .then(async () => {
-        Alert.alert('Purchase Success', 'Thank you for your purchase!');
+        Alert.alert(t('PURCHASE_SUCCESS'), t('THANK_YOU_PURCHASE'));
         dispatch(setIsSubs(true));
         navigation.reset({
           routes: [{name: 'RootTabs'}],
@@ -125,7 +128,7 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
       })
       .catch(error => {
         if (error instanceof PurchaseError) {
-          Alert.alert('Purchase Failed', `${error.toString()}`);
+          Alert.alert(t('PURCHASE_FAILED'), `${error.toString()}`);
         }
         setLoading(false);
       });
@@ -174,7 +177,7 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
         />
 
         <View style={styles.reviewView}>
-          <Text style={styles.reviewTitle}>Ratings and Reviews</Text>
+          <Text style={styles.reviewTitle}>{t('RATINGS_REVIEWS')}</Text>
           <Image
             style={styles.reviewImage}
             source={require('../../assets/purchase/ratingView.png')}
@@ -209,7 +212,7 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
         )}
 
         <CommonButton
-          text="Continue"
+          text={t('CONTINUE')}
           onPress={handlePurchaseButton}
           styles={styles.button}
           icon={<ArrowRight width={20} height={20} color={'#fff'} />}
@@ -219,15 +222,15 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
       <View style={styles.footer}>
         <View style={styles.footerSubButtonsContainer}>
           <TouchableHighlight onPress={handleTermsOfUseButton}>
-            <Text style={styles.footerText}>Terms of Use</Text>
+            <Text style={styles.footerText}>{t('TERMS_OF_USE')}</Text>
           </TouchableHighlight>
           <Text style={styles.footerText}>|</Text>
           <TouchableHighlight onPress={handlePrivacyPolicyButton}>
-            <Text style={styles.footerText}>Privacy Policy</Text>
+            <Text style={styles.footerText}>{t('PRIVACY_POLICY')}</Text>
           </TouchableHighlight>
           <Text style={styles.footerText}>|</Text>
           <TouchableHighlight onPress={handleRestoreButton}>
-            <Text style={styles.footerText}>Restore</Text>
+            <Text style={styles.footerText}>{t('RESTORE')}</Text>
           </TouchableHighlight>
         </View>
       </View>
@@ -238,14 +241,16 @@ const PurchasePage1: FunctionComponent = ({navigation}: any) => {
 };
 
 const DescItem = ({title, description, image}: any) => {
+  const {t} = useTranslation('common', 'PURCHASE_PAGES');
+
   return (
     <View style={[styles.container, {width: WIDTH - 64}]}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={image} resizeMode="contain" />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
+        <Text style={styles.title}>{t(title)}</Text>
+        <Text style={styles.description}>{t(description)}</Text>
       </View>
     </View>
   );

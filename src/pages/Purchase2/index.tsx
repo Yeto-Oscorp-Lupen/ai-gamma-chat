@@ -24,29 +24,30 @@ import {getPurchases} from '../../utils';
 import styles from './styles';
 import {ArrowRight, Wizard} from '../../components/Icons';
 import InfoItem from './components/InfoItem';
+import useTranslation from '../../hooks/useTranslation';
 
 const INFORMATIONS = [
   {
-    title: 'Exclusive to Plus',
-    description:
-      'Plus users get access to Gamma AI and the latest beta features.',
+    title: 'EXCLUSIVE_TO_PLUS',
+    description: 'PLUS_USERS_ACCESS',
     image: require('../../assets/purchase/desc-1.png'),
   },
   {
-    title: 'Built for Quality',
-    description:
-      'Gamma AI excels at a diverse range of personal and work tasks.',
+    title: 'BUILT_FOR_QUALITY',
+    description: 'GAMMA_AI_EXCELS',
     image: require('../../assets/purchase/desc-2.png'),
   },
   {
-    title: 'Limited Use',
-    description: 'Usage caps for Gamma AI are reset regularly.',
+    title: 'LIMITED_USE',
+    description: 'USAGE_CAPS_RESET',
     image: require('../../assets/purchase/desc-3.png'),
   },
 ];
 
 const PurchasePage2: FunctionComponent = ({navigation}: any) => {
   const dispatch = useDispatch();
+  const {t} = useTranslation('common', 'PURCHASE_PAGES');
+
   const [loading, setLoading] = useState<boolean>(true);
   const [subscriptions, setSubscriptions] = useState<any>([]);
   const [selectedPurchaseIndex, setSelectedPurchaseIndex] = useState<number>(0);
@@ -93,7 +94,7 @@ const PurchasePage2: FunctionComponent = ({navigation}: any) => {
     setLoading(true);
     await requestSubscription({sku})
       .then(async () => {
-        Alert.alert('Purchase Success', 'Thank you for your purchase!');
+        Alert.alert(t('PURCHASE_SUCCESS'), t('THANK_YOU_PURCHASE'));
         dispatch(setIsSubs(true));
         navigation.reset({
           routes: [{name: 'RootTabs'}],
@@ -102,7 +103,7 @@ const PurchasePage2: FunctionComponent = ({navigation}: any) => {
       })
       .catch(error => {
         if (error instanceof PurchaseError) {
-          Alert.alert('Purchase Failed', `${error.toString()}`);
+          Alert.alert(t('PURCHASE_FAILED'), `${error.toString()}`);
         }
         setLoading(false);
       });
@@ -170,7 +171,7 @@ const PurchasePage2: FunctionComponent = ({navigation}: any) => {
       </View>
 
       <CommonButton
-        text="Continue"
+        text={t('CONTINUE')}
         onPress={handlePurchaseButton}
         styles={styles.continueButton}
         icon={<ArrowRight width={20} height={20} color={'#fff'} />}
@@ -179,15 +180,15 @@ const PurchasePage2: FunctionComponent = ({navigation}: any) => {
       <View style={styles.footer}>
         <View style={styles.footerSubButtonsContainer}>
           <TouchableHighlight onPress={handleTermsOfUseButton}>
-            <Text style={styles.footerText}>Terms of Use</Text>
+            <Text style={styles.footerText}>{t('TERMS_OF_USE')}</Text>
           </TouchableHighlight>
           <Text style={styles.footerText}>|</Text>
           <TouchableHighlight onPress={handlePrivacyPolicyButton}>
-            <Text style={styles.footerText}>Privacy Policy</Text>
+            <Text style={styles.footerText}>{t('PRIVACY_POLICY')}</Text>
           </TouchableHighlight>
           <Text style={styles.footerText}>|</Text>
           <TouchableHighlight onPress={handleRestoreButton}>
-            <Text style={styles.footerText}>Restore</Text>
+            <Text style={styles.footerText}>{t('RESTORE')}</Text>
           </TouchableHighlight>
         </View>
       </View>

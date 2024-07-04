@@ -182,5 +182,29 @@
     "TERMS_OF_USE": "Условия использования",
     "PRIVACY_POLICY": "Политика конфиденциальности",
     "LIMITLESS_MEMBERSHIP": "Безлимитное членство"
+  },
+  "PURCHASE_PAGES": {
+    "EXCLUSIVE_TO_PLUS": "Эксклюзивно для Plus",
+    "PLUS_USERS_ACCESS": "Пользователи Plus получают доступ к Gamma AI и последним бета-версиям.",
+    "BUILT_FOR_QUALITY": "Создано для качества",
+    "GAMMA_AI_EXCELS": "Gamma AI отлично справляется с широким спектром личных и рабочих задач.",
+    "LIMITED_USE": "Ограниченное использование",
+    "USAGE_CAPS_RESET": "Лимиты использования для Gamma AI регулярно сбрасываются.",
+    "TERMS_OF_USE": "Условия использования",
+    "PRIVACY_POLICY": "Политика конфиденциальности",
+    "RESTORE": "Восстановить",
+    "CONTINUE": "Продолжить",
+    "ANSWERS_FROM_GPT4O": "Ответы от GPT-4o",
+    "MORE_ACCURATE_DETAILED": "Более точные и детализированные ответы",
+    "HIGHER_WORD_LIMIT": "Больший лимит слов",
+    "TYPE_LONGER_MESSAGES": "Пишите более длинные сообщения",
+    "NO_LIMITS": "Без ограничений",
+    "UNLIMITED_DIALOGUES": "Неограниченные диалоги",
+    "NO_ADS": "Без рекламы",
+    "ENJOY_CHAT_ASK_AI": "Наслаждайтесь чатом и AI без рекламы",
+    "PURCHASE_SUCCESS": "Покупка успешна",
+    "THANK_YOU_PURCHASE": "Спасибо за покупку!",
+    "PURCHASE_FAILED": "Покупка не удалась",
+    "RATINGS_REVIEWS": "Рейтинги и отзывы"
   }
 }
