@@ -5,7 +5,7 @@ import {WIDTH} from '../../constants';
 export default StyleSheet.create({
   container: {
     width: WIDTH / 2 - theme.spacing(2.7),
-    height: WIDTH / 2 - theme.spacing(2.7) - 50,
+    minHeight: WIDTH / 2 - theme.spacing(2.7) - 50,
     backgroundColor: theme.colors.main.grey,
     padding: 10,
     margin: theme.spacing(1),

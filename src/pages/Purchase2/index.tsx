@@ -85,6 +85,12 @@ const PurchasePage2: FunctionComponent = ({navigation}: any) => {
       }
     };
     bootstrapAsync();
+
+    return () => {
+      setTimeout(() => {
+        navigation.navigate('PurchasePage1');
+      }, 3000);
+    };
   }, []);
 
   const beSubs = async (sku: any) => {
