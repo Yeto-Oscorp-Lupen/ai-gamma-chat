@@ -21,7 +21,7 @@ export default StyleSheet.create({
     height: 86,
     alignItems: 'flex-start',
     justifyContent: 'center',
-    gap: WIDTH / 3,
+    gap: WIDTH / 3.5,
     paddingTop: 12,
     backgroundColor: theme.colors.background.secondary,
     position: 'absolute',

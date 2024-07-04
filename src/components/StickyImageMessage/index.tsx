@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 82,
     width: WIDTH,
-    height: 70,
+    height: theme.spacing(8),
     backgroundColor: theme.colors.main.black,
     justifyContent: 'center',
     alignItems: 'center',
