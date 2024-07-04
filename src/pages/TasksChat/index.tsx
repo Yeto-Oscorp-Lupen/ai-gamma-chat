@@ -32,7 +32,7 @@ const TasksChatPage = ({route, navigation}: any) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [conversation, setConversation] = useState<any>([]);
   const [showingConversation, setShowingConversation] = useState<any>([
-    {role: 'system', content: t(`${item?.firstMessage}`)},
+    {role: 'system', content: t(`TASKS_PAGE.TASKS.${item?.firstMessage}`)},
   ]);
 
   const setNewRightCount = async () => {
@@ -93,7 +93,7 @@ const TasksChatPage = ({route, navigation}: any) => {
     setQuestion('');
     setConversation([]);
     setShowingConversation([
-      {role: 'system', content: t(`${item?.firstMessage}`)},
+      {role: 'system', content: t(`TASKS_PAGE.TASKS.${item?.firstMessage}`)},
     ]);
   };
 
