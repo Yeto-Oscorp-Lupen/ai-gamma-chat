@@ -34,7 +34,7 @@ export default StyleSheet.create({
   purchaseButtonsContainer: {
     paddingHorizontal: PURCHASE_1_HORIZONTAL_PADDING,
     marginTop: theme.spacing(4),
-    gap: theme.spacing(2),
+    gap: theme.spacing(1),
   },
   continueButton: {
     width: 300,

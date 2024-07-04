@@ -1,17 +1,16 @@
-import {Image, StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {WIDTH} from '../../constants';
 import AnimatedPressable from '../AnimatedPressable';
 import {theme} from '../../constants/theme';
+import useTranslation from '../../hooks/useTranslation';
 
 const StickyImageMessage = ({onPress = () => {}}: any) => {
+  const {t} = useTranslation('common');
+
   return (
     <View style={styles.container}>
-      <AnimatedPressable onPress={onPress}>
-        <Image
-          style={styles.image}
-          resizeMode="cover"
-          source={require('../../assets/common/stickImageMessage.png')}
-        />
+      <AnimatedPressable onPress={onPress} style={styles.textContainer}>
+        <Text style={styles.text}>{t('TYPE_YOUR_MESSAGE_HERE')}</Text>
       </AnimatedPressable>
     </View>
   );
@@ -26,10 +25,18 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.main.black,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: theme.spacing(1),
   },
-  image: {
-    width: WIDTH,
-    height: 70,
+  textContainer: {
+    borderWidth: 1,
+    borderColor: theme.colors.main.primary,
+    width: WIDTH - theme.spacing(4),
+    paddingVertical: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
+    borderRadius: theme.spacing(1),
+  },
+  text: {
+    color: theme.colors.main.gray,
   },
 });
 
