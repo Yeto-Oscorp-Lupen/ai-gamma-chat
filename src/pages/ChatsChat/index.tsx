@@ -137,7 +137,7 @@ const ChatsChatPage = ({route, navigation}: any) => {
       )}
       <KeyboardAvoidingView
         style={styles.containerKeyboard}
-        behavior={'padding'}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         keyboardVerticalOffset={Platform.OS === 'ios' ? 200 : 0}>
         <View style={[styles.bottomView]}>
           <PromptInput
