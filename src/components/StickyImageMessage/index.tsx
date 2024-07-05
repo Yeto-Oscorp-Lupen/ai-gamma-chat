@@ -3,6 +3,7 @@ import {WIDTH} from '../../constants';
 import AnimatedPressable from '../AnimatedPressable';
 import {theme} from '../../constants/theme';
 import useTranslation from '../../hooks/useTranslation';
+import {TAB_BAR_HEIGHT} from '../CustomTabBar/styles';
 
 const StickyImageMessage = ({onPress = () => {}}: any) => {
   const {t} = useTranslation('common');
@@ -19,7 +20,7 @@ const StickyImageMessage = ({onPress = () => {}}: any) => {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 82,
+    bottom: TAB_BAR_HEIGHT,
     width: WIDTH,
     height: theme.spacing(8),
     backgroundColor: theme.colors.main.black,

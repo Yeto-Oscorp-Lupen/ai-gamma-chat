@@ -1,6 +1,8 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {theme} from '../../constants/theme';
 import {WIDTH} from '../../constants';
+
+export const TAB_BAR_HEIGHT = Platform.OS === 'ios' ? 86 : 66;
 
 export default StyleSheet.create({
   text: {
@@ -18,7 +20,7 @@ export default StyleSheet.create({
   mainDiv: {
     flexDirection: 'row',
     width: WIDTH,
-    height: 86,
+    height: TAB_BAR_HEIGHT,
     alignItems: 'flex-start',
     justifyContent: 'center',
     gap: WIDTH / 3.5,

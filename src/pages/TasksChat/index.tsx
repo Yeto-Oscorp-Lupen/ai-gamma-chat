@@ -156,8 +156,8 @@ const TasksChatPage = ({route, navigation}: any) => {
       )}
       <KeyboardAvoidingView
         style={styles.containerKeyboard}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        keyboardVerticalOffset={200}>
+        behavior={'padding'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 200 : 0}>
         <View style={[styles.bottomView]}>
           <PromptInput
             text={question}

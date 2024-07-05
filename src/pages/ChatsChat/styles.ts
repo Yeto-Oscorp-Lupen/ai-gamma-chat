@@ -18,7 +18,7 @@ export default StyleSheet.create({
     backgroundColor: '#232126',
   },
   containerKeyboard: {
-    height: 120,
+    height: Platform.OS === 'ios' ? 120 : 100,
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: theme.colors.main.grey,
